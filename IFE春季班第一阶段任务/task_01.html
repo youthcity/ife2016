@@ -154,8 +154,40 @@
 			请重复输入密码：<input placeholder="这是一个文本输入框"></input>
 		</p>
 		<p>密码请为6-16位英文数字</p>
-			
+		<span>性别：</span>
+		<label for="man"><input type="radio" id="man" name="gender" value="男" checked></input>
+		男
+		</label>
+		<label for="woman">
+			<input type="radio" id="woman" name="gender" value="woman" ></input>
+			女
+		</label>
+		<label for="city">
+			城市：
+			<select name="city" id="city">
+				<option value="1" label="北京">北京</option>
+				<option value="2" label="武汉">武汉</option>
+				<option value="3" label="长沙">长沙</option>
+				<option value="4" label="徐州">徐州</option>
+				<option value="5" label="黄冈">黄冈</option>
+			</select>
+		</label>
+		<span >爱好</span>
+		<label for="sport"><input type="radio" id="sport" name="sport" ></input>
+		运动
+		</label>
+		<label for="art"><input type="radio" id="art" name="art" ></input>
+		艺术
+		</label>
+		<label for="science"><input type="radio" id="science" name="science" ></input>
+		科学
+		</label>
+		<span>个人描述：</span>
+		<textarea >这是一个多行输入框，输入您的个人描述</textarea>
+		<input type="submit" value="确认提交">
 	</form>
-
+	<footer>
+		版权所有 ©
+	</footer>
 </body>
 </html>

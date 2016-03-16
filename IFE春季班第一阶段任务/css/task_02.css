@@ -1,0 +1,169 @@
+body {
+	font-family:"Microsoft Yahei";
+	padding: 0;
+	margin: 0;
+}
+
+h3 {
+    color: #777;
+    font-size: 1em;
+}
+
+p.author-time {
+    color: #999;
+    font-size: 0.8em;
+}
+/*导航栏*/
+header {
+	background-color: #333;
+	position: absolute;
+	width: 100%;
+	top: 0px;
+}
+nav {
+	position: absolute;
+	width: 100%;
+	min-width: 1000px;
+	height: 50px;
+	background-color: #333;
+}
+
+nav span{
+	display: inline-block;
+	width: 180px;
+	height: 100%;
+	padding: 5px 30px;
+}
+
+nav span img {
+	height: 40px;
+}
+
+nav ul {
+	position: absolute;
+	top: 0;
+	right:0;
+	width: 30%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	/*align-items: center;*/
+	list-style: none;
+	font-size: 14px;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+body {
+	background-color: #cdcdcd;
+}
+
+.passage {
+	padding: 20px;
+	margin: 30px;
+	background-color: white;
+	/*CSS3 box-shadow是给元素块添加周边阴影效果
+	{box-shadow:[inset] x-offset y-offset blur-radius spread-radiuscolor}
+	对象选择器 {box-shadow:[投影方式] X轴偏移量 Y轴偏移量阴影模糊半径 阴影扩展半径 阴影颜色}
+	*/
+	box-shadow: 3px 3px 3px #999;
+}
+
+
+ul.list {
+	list-style: none;
+}
+
+ul.pictures {
+	list-style: none;
+}
+
+li div {
+	border: 1px solid #cccccc;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+}
+
+.pictures img{
+	max-width: 100px;
+}
+.pictures  p{
+	text-align: center;
+	margin:0 0 10px 0;
+}
+
+/*表格*/
+table {
+	width: 100%;
+	/*为表格设置合并边框模型*/
+	border-collapse:collapse;
+}
+thead {
+	background-color: #333;
+	color: white;
+	font-weight: bold;text-align: left;
+}
+tfoot {
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+.sidebar>h2 {
+	border-left: 5px solid #ccc;
+	font-size: 1em;
+}
+
+/*表格部分*/
+
+/*重点
+	首先将宽度设为30%，然后定位为右边
+*/
+label.title {
+	display: inline-block;
+	text-align: right;
+	width: 30%;
+	margin-top: 0.7em;
+	margin-right: 1em;
+}
+.form-block{
+	display: inline-block;
+	/*将高度与文字高度对齐*/
+	vertical-align: text-top;
+}
+.hint{
+	color: #999;
+	font-size: 0.7em;
+}
+
+textarea {
+	vertical-align: text-top;
+	width: 60%;
+	height: 10em;
+}
+
+.submit {
+	width: 100%;
+	padding: 10px;
+	color: white;
+	background-color: #35d;
+	margin-top: 10px;
+	font-size: 1em;
+	font-weight: bold;
+	/*CSS3圆角特效*/
+	border-radius: 10px;
+}
+
+footer>p {
+	text-align: center;
+	
+	font-weight: bold;
+}
+footer {
+	color: white;
+	background-color: black;
+	padding: 10px;
+}

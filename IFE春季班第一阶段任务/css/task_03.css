@@ -1,0 +1,62 @@
+body{
+	font-family:"Microsoft Yahei";
+	margin: 0;
+	padding: 0;
+}
+.main{
+	background-color: #eee;
+}
+/*左侧*/
+.left {
+	width: 200px;
+	float: left;
+	background: #fff;
+	border: 1px solid #000;
+	padding: 20px;
+}
+.team_logo{
+	width: 80px;
+	height: 80px;
+	float: left;
+}
+.team_name {
+	padding-left: 10px;
+	display: inline-block;
+	float: left;
+	font-weight: bold;
+	font-size: 0.5em;
+
+}
+/*右侧*/
+.right {
+	float: right;
+	width: 120px;
+	background: #fff;
+	border: 1px solid #999;
+	padding: 20px;
+}
+.person_logo {
+	margin: 10px 0;
+	/*float: left;*/
+	width: 80px;
+	height: 80px;
+	border:1px solid #999;
+}
+
+/*中间*/
+.center{
+	width: auto;
+	margin-left: 200px;
+	margin-right: 120px;
+	word-wrap: break-word;
+	border: 1px solid #999;
+	padding: 20px;
+}
+
+.clearfix {
+	clear: both;
+}
+/*问题*/
+div{
+		box-sizing: border-box;
+	}

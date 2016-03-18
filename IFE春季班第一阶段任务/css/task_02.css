@@ -19,6 +19,14 @@ header {
 	position: absolute;
 	width: 100%;
 	top: 0px;
+	margin-bottom: 20px;
+}
+header img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	margin: 5px 40px 10px 40px;
 }
 nav {
 	position: absolute;
@@ -26,6 +34,8 @@ nav {
 	min-width: 1000px;
 	height: 50px;
 	background-color: #333;
+	float: right;
+	
 }
 
 nav span{
@@ -87,13 +97,24 @@ li div {
 	margin: 10px;
 	display: inline-block;
 }
+.pictures div {
+	border:1px solid #000;
+	display: inline-block;
+	padding: 10px;
+	margin: 0 0 10px 0;
+	
+}
 
 .pictures img{
+
 	max-width: 100px;
+	display: block;
+	margin: 0 auto;
 }
 .pictures  p{
 	text-align: center;
 	margin:0 0 10px 0;
+
 }
 
 /*表格*/

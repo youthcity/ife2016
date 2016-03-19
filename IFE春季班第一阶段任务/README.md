@@ -52,3 +52,45 @@ inherit	  | 规定应该从父元素继承 overflow 属性的值。
 
 ## task05
 `border-collapse: collapse;`  合并边框线
+
+## task06
+'inherit'含义是指定继承父元素的相应属性
+> div#menu{
+  border:2px solid black;
+  padding:5px;
+  background-color:#909090;
+}
+div#menu div{
+  border:inherit;
+  padding:inherit;
+  background-color:#dedede;
+}
+
+`box-shadow`属性向框添加一个或多个阴影
+
+### CSS中的`background`和`background-color`的区别
+> background可以定义图片 定位 颜色；如果你定义背景的话直接写background-color:可以准确的定位；那些图片 定位就不在考虑范畴之内；所以更加准确并且还增加了加载速度；在优化方面建议用background-color准确定位；
+
+### `opacity` 指定一个元素的透明度
+
+### 文字处理中的css
+`text-decoration: underline;`
+> 这个 CSS 属性是用于设置文本排版（下划线、顶划线、删除线或者闪烁）。下划线和顶划线修饰于文本的下部，删除线位于文本之上。
+[text-decoration](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration)
+
+`text-transform: capitalize;`
+> 语法：`text-transform : none | capitalize | uppercase | lowercase`
+参数：none : 　无转换发生 
+	  capitalize : 　将每个单词的第一个字母转换成大写，其余无转换发生 
+	  uppercase : 　转换成大写 
+	  lowercase : 　转换成小写
+
+`font-variant: small-caps;`设置为小型大写字母字体
+`font-style: italic;` 字体倾斜
+`text-indent`
+> text-indent 属性规定文本块中首行文本的缩进。
+注释：允许使用负值。如果使用负值，那么首行会被缩进到左边。
+**希望一段文字第一行缩进2个汉字，这段文本字体大小为12px**
+例如：
+p {text-indent: 1cm}
+### rgba(0,0,0,.5);可以设置颜色和透明度

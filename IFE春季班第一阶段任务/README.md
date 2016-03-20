@@ -94,3 +94,32 @@ div#menu div{
 例如：
 p {text-indent: 1cm}
 ### rgba(0,0,0,.5);可以设置颜色和透明度
+
+## task07
+PS切图学习 
+取消选区快捷键CTRL+D
+
+### HTML中文字体的英文名称
+> 宋体	SimSun
+黑体	SimHei
+微软雅黑	Microsoft YaHei
+微软正黑体	Microsoft JhengHei
+新宋体	NSimSun
+新细明体	PMingLiU
+细明体	MingLiU
+标楷体	DFKai-SB
+仿宋	FangSong
+楷体	KaiTi
+仿宋_GB2312	FangSong_GB2312
+楷体_GB2312	KaiTi_GB2312
+
+### CSS属性学习
+`background-size:`规定背景图像的尺寸
+> 属性值
+ cover:把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+ 背景图像的某些部分也许无法显示在背景定位区域中。
+ contain: 把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。	
+ length:(eg:10px 150px;200px;100% 100%;50%;...)
+ 设置背景图像的高度和宽度。
+第一个值设置宽度，第二个值设置高度。
+如果只设置一个值，则第二个值会被设置为 "auto"。

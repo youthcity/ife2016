@@ -9,6 +9,16 @@ body {
 	font:14px 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Microsoft Yahei', simsun, sans-serif;
 	color: #777;
 }
+.group:before,
+.group:after{
+	content: "";
+	display:table;
+}
+.group:after{
+	clear: both;
+}
+
+
 
 /*nav*/
 nav {
@@ -26,7 +36,7 @@ nav h1 {
 	font-family: "Microsoft YaHei";
 	position: absolute;
 	left: 60px;
-	bottom: 0;
+	bottom: 20px;
 	background: #fff url("../image/task07/nav-logo.png") no-repeat;
 	padding-left: 40px;
 
@@ -281,36 +291,339 @@ nav ul li a {
 	text-align: justify;
 }
 /*product*/
-.product_1{
-	height: 568px;
-	background-color: #fff;
-	
-	overflow: hidden;
+h3,h1,p{
+	padding: 0;
+	margin: 0;
 }
-
+.product_1{
+	height: 567px;
+}
 .product_1 .left{
 	float: left;
-	width: 850px;
-	height: 568px;
+	background: #fff url("../image/task07/model1.png") no-repeat;
+	width: 851px;
+	height: 567px;	
+	background-size: cover; 
+	text-align: center;
+	color:#fff;
+}
+
+.product_1  .left  h3{
+	font-size: 50px;
+	line-height: 75px;
+	margin-top: 120px;
+	font-weight: normal;
+}
+
+.product_1  .left  h1{
+	font-size: 157px;	
+	line-height: 157px;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin-top: -20px;
+}
+.product_1  .left p{
+	font-size: 21px;	
+	line-height: 43px;
+	font-weight: normal;
+}
+.product_1 .right {
+	float: right;
+	height: 567px;
+	width: 498px;
+	text-align: center;
+	position: relative;
+}
+
+.product_1 .right h2{
+	font-size: 21px;
+	font-weight: normal;
+	padding-top: 163px;
+}
+.product_1 .right h2 span{
+	color: red;
+}
+
+.product_1 .right p{
+	margin: 0 auto;
+	width: 280px;
+
+	line-height: 40px;
+	font-size: 12px;
+	color: #999;
+	text-align: left;
+	margin-bottom: 50px;
+}
+
+.product_1 .right a{
+	border: 2px solid #e25d60;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: #e25d60;
+}
+.product_1 .right ul li{
+	float: left;
+	display: inline-block;
+	border-radius: 50%;
+    color: #fff;
+    border: 1px solid #929293;
+    margin: 0 7px;
+    width: 10px;
+    height: 10px;
+
+
+}
+.product_1 .right ul {
+	text-align: center;
+  	position: absolute;
+	left: 50%;
+	margin-left: -75px;
+	margin-top: 40px;
+}
+.product_1 .right ul li:nth-child(1){
+	background: #929293;
+}
+/*hot*/
+.hot{
+	height: 520px;
+}
+.hot-ul{
+	list-style: none;
+	overflow: hidden;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	text-align: center;
+
+}
+.hot-ul li{
+	font-family: "SimHei";
+	position: relative; 
+}
+
+.hot-ul li:nth-child(1){
+	float: left;
+	width: 498px;
+	height: 520px;
+	background-color: #e74f4d;
+	color: #fff;
+}
+
+.hot-ul li:nth-child(3){
+	
+	height: 520px;
+	margin-left: 498px;
+	margin-right: 498px;
+	width: auto;
+	color: #000;
 }
 
 
-div.right{
-	height: 566px;
+.hot-ul li:nth-child(2){
+	background: #fff url("../image/task07/model2.png") no-repeat;
+	background-size: cover;
+	float: right;
+	width: 498px;
+	height: 520px;
+}
+
+.hot-ul li h2{
+	font-weight: normal;
+	font-size: 21px;
+	margin-top: 0;
+}
+.hot-ul li a{
+	text-decoration: none;
+	padding: 10px 20px;
+	
+}
+.hot-a1{
+	color: #000;
+	border: 1px solid #fff;
+
+}
+
+.hot-a2{	
+	color: #ed7b7a;
+	border: 1px solid #ed7b7a;
+
+}
+
+.hot-ul li div{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.jionus {
+	height: 300px;
 	text-align: center;
+	padding-top: 110px; 
+}
+.jionus h3{
+	
+	color: #000;
+	font-size: 21px;
+	font-weight: normal;
+}
+
+/*input*/
+.input{
+	height: 390px;
+	padding: 0 142px;
 	
 }
 
-.right h2{
-	font-size: 20px;
-	padding-top: 165px;	
+.input ul{
+	list-style: none;
+	width: 300px;
+	text-align: left;
+	float: left;
 }
-.right h2 >span{
-	color: #e74f4d;
+.input ul li{
+	position: relative;
+}
+.input ul li h6{
+	font-weight: normal;
+	font-size: 14px;
+	font-family: "SimHei"
+}
+.input ul li p{
+	font-size: 12px;
+	font-family: "SimSun";
+	color: #aaa;
+	padding-bottom: 20px;
+}
+.input a{
+	position: absolute;
+	text-decoration: none;
+	color: #000;
+	background: #fff url("../image/task07/arrow.png") no-repeat left 50%; 
+	padding-left: 20px;	
+	bottom: 0;
+	right: 0;
+}
+.input-form{
+	float: left;
+	width: 680px;
+	padding-left: 45px;
+}
+.input-form div{
+	width: 100%;	
 }
 
-.right p{
-	display: block;
-	padding: 0 70px;
-	margin: 0 auto;
+.input-style{
+	min-width: 280px;
+    min-height: 40px;
+    border: none;
+    background: #ededee;
+    margin-bottom: 14px;
+    margin-right: 15px;
+    padding: 0 20px;
+    outline: none;
+    color: #000;
+}
+.input-textarea{
+    width: 620px;
+    height: 120px;
+    padding: 10px 20px;
+    overflow: visible;
+    border: none;
+    background: #ededee;
+    outline: none;
+    resize: none;
+}
+.submit{
+	width: 660px;
+	background: #ededee;
+	padding: 20px 0;
+	margin-top: 10px;
+	border: none;
+	font-size: 14px;
+	color: #333;
+	font-family: "SimHei";
+}
+
+/*contact*/
+.contact{
+	height: 260px;
+	text-align: center;
+	background-color: #33363f;
+	color: #fff;
+	padding-top: 100px;
+}
+.contact h2{
+	font-family: "SimSun";
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 40px;
+	margin-bottom: 0px;
+}
+.contact p{
+	font-family: "SimHei";
+	font-size: 12px;
+	line-height: 18px;
+}
+.contact-input{
+	width: 430px;
+	height: 40px;
+	font-size: 14px;
+	border: none;
+	padding: 0;
+	padding-left: 10px;
+}
+.submit-text{
+	width: 80px;
+	height: 40px;
+	font-size: 15px;
+	border: none;
+	background-color: #686166;
+	color: #fff;
+	line-height: 40px;
+	margin-left: -4px;
+}
+.input-div{
+	margin-top: 20px;
+	margin-bottom: 35px;
+}
+
+.icon{
+	width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0 15px;
+    cursor: pointer;
+}
+.qq{
+	background: url("../image/task07/qq.png") no-repeat;
+}
+.weibo{
+	background: url("../image/task07/weibo.png") no-repeat;
+}
+.twitter{
+	background: url("../image/task07/fb.png") no-repeat;
+}
+.earth{
+	background: url("../image/task07/globe.png") no-repeat;
+}
+/*footer*/
+footer{
+	position: relative;
+	height: 40px;
+	background-color: #2f2f38;
+	font-size: 12px;
+}
+.footer-left{
+	position: absolute;
+	color: #fff;
+	top: 20px;
+	left: 100px;
+}
+.footer-right{
+	position: absolute;
+	color: #fff;
+	top: 20px;
+	right: 100px;
+	text-decoration: none;
 }

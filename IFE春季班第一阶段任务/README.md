@@ -9,6 +9,7 @@
 	> header
       main
       footer
+    `font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;`  
 
 ### 导航栏	
    nav 元素去掉前面黑点 使用 `list-style:none`

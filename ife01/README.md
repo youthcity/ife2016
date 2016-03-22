@@ -1,5 +1,10 @@
 # 百度前端学院学习
 
+## 待解决问题合集
+1. 居中问题()
+	> 方案1 左右侧浮动，中间margin的方法”来实现左右固定中间自适应
+
+
 ## task01
 
 
@@ -7,15 +12,15 @@
 ## task02
 ### Html整体结构
 	> header
-      main
-      footer
-    `font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;`  
+	  main
+	  footer
+	`font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;`  
 
 ### 导航栏	
    nav 元素去掉前面黑点 使用 `list-style:none`
    使用绝对定位固定 `图标` 和 `导航条`
-     `display: flex;`  容器内对象水平对齐
-   	 `justify-content` 在当灵活容器内的各项没有占用主轴上所有可用的空间时对齐容器内的各项（水平）。
+	 `display: flex;`  容器内对象水平对齐
+	 `justify-content` 在当灵活容器内的各项没有占用主轴上所有可用的空间时对齐容器内的各项（水平）。
 
 ### Markdown
  Alt+M 快速预览
@@ -134,3 +139,108 @@ PS切图学习
 :nth-child(3n+1)自定义选取标签，3n+1表示“隔二取一”
 :last-child选取最后一个标签
 :nth-last-child(3)选取倒数第几个标签,3表示选取第3个
+
+## task08 
+#### [如何在Git上创建demo](http://ife.baidu.com/note/detail?noteId=58)
+#### [1em = 16px](http://www.uml.org.cn/html/201207311.asp)
+#### [网页字体排印](http://ife.baidu.com/note/detail?noteId=47)
+>	`label`标签优化点击
+label用两种用于优化点击的用法： 1、label的for属性指向对应input的id； 2、lable标签包裹input标签，这就能省去for属性
+#### 利用<link>标签的 rel 属性给网页添加 icon
+在网页的地址栏显示icon
+`<link rel="Shortcut Icon" href="favicon.ico">`
+在收藏夹中显示icon
+`<link rel="Bookmark" href="favicon.ico">`
+#### 链接的状态
+> a:link {color: #FF0000}    /* 未访问的链接 */
+a:visited {color: #00FF00}    /* 已访问的链接 */
+a:hover {color: #FF00FF}    /* 鼠标移动到链接上 */
+a:active {color: #0000FF}    /* 选定的链接 */
+/*
+tips:
+1.a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。
+2.a:active 必须被置于 a:hover 之后，才是有效的。
+*/
+#### [Web语义化](http://ife.baidu.com/note/detail?noteId=221)
+#### [4种方式实现左右定宽中间自适应的三栏布局](http://ife.baidu.com/note/detail?noteId=218)   <span style="color:red">重点</span> 
+#### [CSS样式-居中设置](http://ife.baidu.com/note/detail?noteId=103)
+#### [三栏式布局及引申](http://ife.baidu.com/note/detail?noteId=77)
+#### [三栏式布局经典之圣杯布局与双飞翼布局的相同点与不同点](http://ife.baidu.com/note/detail?noteId=76)
+#### [关于布局](http://ife.baidu.com/note/detail?noteId=397)
+#### [响应式布局](http://ife.baidu.com/note/detail?noteId=400)
+#### [CSS布局奇淫巧计之-强大的负边距](http://www.cnblogs.com/2050/archive/2012/08/13/2636467.html)
+#### [关于布局 —— Position、Float、Flexbox、负边距](http://ife.baidu.com/note/detail?noteId=397)
+#### [CSS媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)
+
+#### 大名鼎鼎的双飞翼布局代码
+```html
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>sd</title>
+	<link rel="stylesheet" type="text/css" href="1.css">
+</head>
+<body>
+ <div class="main">
+        <div class="main-warp"> 
+        中间自适应
+        </div>
+    </div>
+    <div class="left">左边定宽</div>
+    <div class="right">右边定宽</div>
+</body>
+</html>
+```
+
+```css
+ .main {
+  width:100%;
+  float:left;
+}
+/*在双飞翼布局里，中间栏的边框、背景色要在`main-warp`里设置*/
+.main-warp {
+  background-color: red;
+  height:300px;
+  margin: 0 120px 0 200px; /*设置main的位置*/
+}
+.left {
+  float: left;
+  background-color: blue;
+  height: 200px;
+  width: 200px;
+  margin-left: -100%;
+}
+.right {
+  float: left;
+  background-color: yellow;
+  height: 400px;
+  width: 120px;
+  margin-left: -120px;
+}
+```
+
+#### `-moz` ` -ms` `-webkit` `-o`
+> -moz代表firefox浏览器私有属性
+-ms代表IE浏览器私有属性
+-webkit代表chrome、safari私有属性
+-o 代表opera
+
+#### 清除浮动的三种方法及各自弊端
+> 1.在容器的结束标签前加一个空标签，在空标签上设置样式“clear:both;”
+缺点：不适合语义化，造成页面上空标签迅速堆积。
+2.用“overflow”属性，设置为“overflow:auto;”当然，为了兼容IE最好用“overflow:hidden;”
+缺点：如果想给元素添加一个盒子阴影或制作一个下来菜单，阴影和菜单将被切断在父元素之内。
+3.clearfix技巧。在父元素上使用‘:before’,':after'两个伪类，“:before”用来防止子元素顶部外边距塌陷，“:after”用来防止子元素的底部外边距塌陷以及清除浮动。“zoom”用来在IE6和IE7中触发父元素的hasLayout机制。示例为：
+```css
+.box-set:before,.box-set:after{
+content:"";
+display:table;
+}
+.box-set:after{
+clear:both;
+}
+.box-set{
+*zoom:1;
+}
+```

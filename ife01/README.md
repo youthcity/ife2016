@@ -2,9 +2,11 @@
 
 ## 待解决问题合集
 1. 居中问题()
-	> 方案1 左右侧浮动，中间margin的方法”来实现左右固定中间自适应
-
-
+方案1 左右侧浮动，中间margin的方法”来实现左右固定中间自适应
+2. 待看文章
+[CSS3的calc()使用](http://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
+[纯CSS3轮播图](http://www.lxway.com/41625691.htm)
+[CSS3轮播图](http://codepen.io/lucifier/pen/DicEn)
 ## task01
 
 
@@ -244,3 +246,26 @@ clear:both;
 *zoom:1;
 }
 ```
+
+
+## task10
+#### [媒体查询]()
+#### [Flexbox——快速布局神器](http://www.w3cplus.com/css3/flexbox-basics.html)
+
+`order` 默认值为0；
+```
+弹性容器的写法： 
+.flex-container{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items:center;
+}
+```
+
+## task12
+#### [CSS3 @keyframes 规则](http://www.w3school.com.cn/cssref/pr_keyframes.asp)
+#### [CSS3 animation 属性](http://www.w3school.com.cn/cssref/pr_animation.asp)
+#### [CSS3 transition 属性](http://www.w3school.com.cn/cssref/pr_transition.asp)
+#### [單純使用CSS3及HTML製作圖片輪播效果](http://blog.shihshih.com/pure-css-slider/)
+Chrome浏览器撤销关闭页面的快捷键`Crtl+Shift+T`

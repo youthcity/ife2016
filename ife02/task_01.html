@@ -13,21 +13,18 @@
 
 <script type="text/javascript">
 
-(function() {
+
   var $input = document.getElementById('aqi-input');
   var $button = document.getElementById('button');
   var $display = document.getElementById('aqi-display');
 
-
-  $button.addEventListener('click', function() {
+  $button.onclick= function() {
 
     if ($input.value)
       $display.innerText = $input.value;
     else
       $display.innerText = '尚无录入';
-  }, false);
-
-})();
+  }
 
 </script>
 </body>

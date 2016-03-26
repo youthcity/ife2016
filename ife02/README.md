@@ -46,3 +46,21 @@ document.write(Math.ceil(-5.9))
 -5
 -5
 ```
+
+### `JavaScript for...in 语句`
+for...in 语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。**遍历包含键值对的对象**
+```
+for (变量 in 对象)
+{
+    在此执行代码
+}
+```
+
+### ` for ... of 语句`
+[深入浅出ES6（二）：迭代器和for-of循环](http://www.infoq.com/cn/articles/es6-in-depth-iterators-and-the-for-of-loop)
+[for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+### `let`
+let 允许把变量的作用域限制在块级域中。与 var 不同处是：var 申明变量要么是全局的，要么是函数级的，而无法是块级的。
+[MDN_let](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let)
+

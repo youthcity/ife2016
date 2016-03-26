@@ -55,6 +55,52 @@ var pageState = {
  * 渲染图表
  */
 function renderChart() {
+    var chart_warp = document.getElementById("aqi-chart-wrap");
+
+    //设定宽度
+    var chartwidth = function (){
+        if(pageState.nowGraTime === "day"){
+            return "6px";
+        }else if(pageState.nowGraTime === "week"){
+            return "20px";
+        }else if(pageState.nowGraTime === "month"){
+            return "50px";
+        }
+    }();
+
+     //设定颜色
+      var chartColor = function(height){
+    if(height >= 0 && height < 75){
+      return "#73832a";
+    }else if(height >= 75 && height < 150){
+      return "#538289";
+    }else if(height >= 150 && height < 225){
+      return "#a02730";
+    }else if(height >= 225 && height < 300){
+      return "#441d49";
+    }else if(height >= 300 && height < 375){
+      return "#005db1";
+    }else if(height >= 375 && height <= 500){
+      return "#10193a";
+    }else{
+      return "black";
+    }
+  }
+
+  //设置包裹层属性
+  chart_wrap.style.width = "650px";
+  chart_wrap.style.height = "500px";
+  chart_wrap.style.lineHeight = "1000px";
+  chart_wrap.style.textAlign = "center";
+  chart_wrap.innerHTML = "";
+
+    //渲染图表内容
+  for(var item in chartData){
+    chart_wrap.innerHTML += "<span style='display:inline-block;margin-left:1px;width:" 
+                            + chartwidth + ";height:" 
+                            + chartData[item] + "px;background-color:"
+                            + chartColor(chartData[item]) + ";'title=" + item +"，"+chartData[item]+ ">";
+  }
 
 }
 

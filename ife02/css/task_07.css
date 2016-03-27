@@ -1,0 +1,9 @@
+.queueView div{
+    display: inline-block;
+    background-color:red;
+    width: 10px;
+    margin-left: 5px;
+}
+#row {
+	padding-bottom: 20px;
+}

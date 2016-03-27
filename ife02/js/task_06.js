@@ -1,6 +1,6 @@
 var list = document.getElementById('list'),
 	input = document.getElementById('input'),
-	btns = document.querySelector('list');
+	btns = document.querySelectorAll('#btn');
 
 	//数学验证
 	var numReg = /^[0-9]+$/;
@@ -31,8 +31,41 @@ var list = document.getElementById('list'),
 
 	// 验证数据
 	var validate = {
-		if(numReg.test(input.value)){
-			return true;
+		inputNotNull : function (){
+			return numReg.test(input.value);
+		},
+		hasChild : function (parentNode){
+			return parentNode.children.length>0;
 		}
-		return false;
 	}
+
+
+	//给btn增加点击事件
+	btns[0].addEventListener('click', function (){
+			var validate_result = validate.inputNotNull();
+			var msg = "输入数字无效";
+			if(!validate_result){
+				alert(msg);
+				return ;
+			}
+			domUtil.appendFirst(list,domUtil.create(input.value));
+	});
+
+	btns[1].addEventListener('click',function(){
+			var validate_result = validate.inputNotNull();
+			var msg = "输入数字无效";
+			if (!validate_result) {
+				// statement
+				alert(msg);
+				return ;
+			}
+			domUtil.appendLast(list,domUtil.create(input.value));
+	});
+
+	btns[2].addEventListener('click',function(){
+			domUtil.remove(list,list.children[0]);
+	});
+
+	btns[3].addEventListener('click',function(){
+			domUtil.remove(list,list.children[list.children.length-1]); //数组长度-1等于最后一个
+	});

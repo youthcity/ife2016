@@ -9,13 +9,13 @@
 4. Boolean类型 `Boolean(0 || NaN)` 返回值为false;
 5. 正无穷`Infinity`与负无穷`-Infinity`
 确定一个数值是不是有穷(是不是位于最大数与最小数之间)的可以用isFinite()函数
-> var result = Number.MAX_VALUE+ Number.MAX_VALUE 
+> var result = Number.MAX_VALUE+ Number.MAX_VALUE
 alert(isFinite(result));
 
 6. NaN
   - 任何数值除以0会返回NaN
   - NaN与任何数值都不相等，包括NaN本身
-  - isNaN(testValue)  确定testValue这个参数是否"不是数值" 
+  - isNaN(testValue)  确定testValue这个参数是否"不是数值"
    > alert(isNaN(NaN));  //true
    alert(isNaN(10));    //false
 alert(isNaN("10"));     //false
@@ -24,14 +24,14 @@ alert(isNaN(true));   //true   true会被转换为1
 ## chapter5
 1. 访问对象属性时，可以使用点表示法，也可是方括号语法。
 使用方括号语法时，应将要访问的属性以字符串的形式放在方括号中，如下：
-> var name = "Nicholas" 
+> var name = "Nicholas"
 alert(person["name"])     //"Nicholas"
 alert(person.name)    // "Nicholas"
 2. 创建Object实例方法:
 	- 使用new操作符后跟Object构造函数   `var person = new Object()`
 	- 使用对象字面量语法   `var person = {}`        **推荐**
-3. Array 类型   
-属性 ：  `length`   不是只读的，可以修改，通过修改它改变数组长度。 
+3. Array 类型
+属性 ：  `length`   不是只读的，可以修改，通过修改它改变数组长度。
 方法 ： 检查是否是数组   `Array.isArray()`
 4. 数组转换字符串方法
   `toLocaleString()` `toString()` `valueOf()`
@@ -52,3 +52,11 @@ alert(person.name)    // "Nicholas"
 ```
 
 
+## chapter6
+1. 构造函数始终都应该以一个大写字母开头，而非构造函数则应该一个小写字母开头；
+2. 使用原型对象的好处是可以让所有对象实例共享它所包含的属性和方法；
+3. 原型模式
+可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值。
+4. `hasOwnProperty`方法可以检测一个属性是存在于实例中，还是存在于原型中。
+当给定的属性存在于对象实例中时，才会返回true；
+5. 组合使用构造函数模式和原型模式

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- Time Limit: 3000/1000 MS (Java/Others) Memory Limit: 65536/65536 K (Java/Others)
+Problem Description:
+你应该在网上注册过各种账号，注册账号时候需要你填写密码，并且通常自动检测你密码复杂程度是否足够，如果密码复杂程度不够就会给出提示信息。Q公司最近需做要这项工作，向你寻求帮助，请你实现这一自动检测的过程。注意一个足够复杂的密码需要满足下列要求：(1)密码长度至少5个字符，(2)至少包含一个大写字母，(3)至少包含一个小写字母，(4)至少包含一个数字。 -->
+<!-- 输入数据是一个非空字符串，长度不超过100。字符串里面字符可以是大小写字母、数字、特殊字符"!", "?", ".", ",", "_"。
+如果密码符合要求，输出“Correct”；否则输出“Too weak”，不用输出引号。 -->
+
+<label for="pwds">密码：<input type="password" id="pwd" name="pwds" ></label>
+<input type="submit" id="btn">
+<script type="text/javascript">
+	var pwd = document.getElementById("pwd");
+
+	function test(){
+			if(pwd.value.length>=5){
+		var temp = pwd.value.split("");
+		if (temp.some(isBig)) {
+			// statement
+			if (temp.some(isLow)) {
+				if (temp.some(isNumber)) {
+					// statement
+					alert("Correct");
+				}else{
+					alert("Too weak");
+				}
+			}else{
+				alert("Too weak");
+			}
+		}else {
+			alert("Too weak");
+		}
+
+	}
+	}
+
+	function isBig(item, index, array) {
+             if (item.charCodeAt(0)>=65 && item.charCodeAt(0)<=90) {
+             	// statement
+             	 return true;
+             }else {
+             	return false;
+             }
+         }
+         
+     function isLow(item, index, array) {
+             if (item.charCodeAt(0)>=97 && item.charCodeAt(0)<=122) {
+             	// statement
+             	 return true;
+             }else {
+             	return false;
+             }
+         }
+	  function isNumber(item, index, array) {
+	     if (item.charCodeAt(0)>=48 && item.charCodeAt(0)<=57) {
+	     	// statement
+	     	 return true;
+	     }else {
+	     	return false;
+	     }
+	 }
+	
+	 var submit = document.getElementById("btn");
+	 btn.onclick = test;
+
+
+</script>
+</body>
+</html>

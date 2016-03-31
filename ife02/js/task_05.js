@@ -54,6 +54,7 @@ var pageState = {
 /**
  * 渲染图表
  */
+
 function renderChart() {
     var chart_warp = document.getElementById("aqi-chart-wrap");
 

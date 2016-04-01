@@ -60,3 +60,97 @@ alert(person.name)    // "Nicholas"
 4. `hasOwnProperty`方法可以检测一个属性是存在于实例中，还是存在于原型中。
 当给定的属性存在于对象实例中时，才会返回true；
 5. 组合使用构造函数模式和原型模式
+
+## chapter8
+1. 窗口位置
+获取窗口相对于屏幕左边和上边的位置`screenLeft`和`screenTop`(chrome、IE、 Safari、 Oper) 
+`screenX`和`screenY`(Firefox、 Safari、 chrome)
+> var leftPos = (typeof window.screenLeft == "number")?
+						window.screenLeft : window.screenX;
+	alert(leftPos);
+	var topPos = (typeof window.screenTop == "number")?
+						window.screenTop : window.screenY;
+	console.log(topPos);
+2. 窗口大小
+`resizeTo()`和`resizeBy()`方法可以调整窗口大小
+`resizeTo()` 接收浏览器窗口的新宽度和新高度
+`resizeBy()` 接收新窗口与原窗口的宽度和高度之差
+3. 间歇调用和超时调用
+`setInterval()`和`setTimeout()`
+4. 超时调用
+> 	var num = 0;
+	var max = 10;
+	var intervalId = null;
+
+	function incrementNumber(){
+		num++;
+		alert("hello");
+		if (num == max) {
+			clearInterval(intervalId);
+			alert("Done");
+		}
+	}
+	intervalId  = setInterval(incrementNumber ,300);	
+> 	var num = 0;
+	var max = 10;
+
+	function incrementNumber(){
+		num++;
+		
+		if(num <max){
+			alert("hello");
+			setTimeout(incrementNumber,300);
+		}else{
+			alert("Done");
+		}
+	}	
+	setTimeout(incrementNumber,300);
+
+5. 系统对话框 `confirm()` 、 `prompt()`
+```
+confirm()函数 ，会返回布尔值
+	if(confirm("Are you sure?")){
+		alert("yes");
+	}else {
+		alert("no");
+	}
+
+prompt()   传入两个参数，第一个为提示文本，第二个为文本输入域的默认值
+var str =  prompt("What's your name ?" ,"youthcity");
+	alert(str);
+```
+6. 查询字符串参数
+
+```
+	function getQueryStringArgs(){
+		// location.search  返回从问号到URL末尾的所有内容
+		// var temp ="?q=javascript&num=10";
+		var qs = (location.search.length > 0 ?  location.search.substring(1) :""),
+		//保存数据的对象
+		args = [],
+
+		items = qs.length ? qs.split("&") :[],
+		item = null,
+		name = null,
+		value = null,
+		i = 0,
+		len = items.length;
+
+		for(i = 0 ;i<len ; i++){
+			item = items[i].split("=");
+			name = decodeURIComponent(item[0]);
+			value = decodeURIComponent(item[1]);
+			
+			if(name.length){
+				args[name] = value;
+			}
+		}
+
+		return args;
+	}
+	var a =  getQueryStringArgs();
+	for( key in a ){
+		alert(a[key]);
+	}
+```	
+

@@ -84,6 +84,99 @@
 	// alert(person1.friends === person2.friends);
 	// alert(person1.sayName === person2.sayName);
 	
+	// var leftPos = (typeof window.screenLeft == "number")?
+	// 					window.screenLeft : window.screenX;
+	// alert(leftPos);
+	// var topPos = (typeof window.screenTop == "number")?
+	// 					window.screenTop : window.screenY;
+	// // console.log(topPos);
+	// window.resizeBy(100,10);
+	// setTimeout(window.resizeTo(300,300),1000);
+	// windowW = window.open("http://www.baidu.com","wroxWindow","height = 400,width = 400, top = 10, left = 10,resizble = no,toolbar =yes")
+	// windowW.resizeTo(500, 500);
+	// windowW.moveTo(300, 300);
+	
+	// windowW.close();
+	// alert(windowW.closed);
+	// var timeoutId = setTimeout(function(){
+	// 	alert("hello world");
+	// },1000);
+	// clearTimeout(timeoutId);
+	
+	// var setId = setInterval(function(){
+	// 	alert("hello");
+	// },1000);
+	// clearInterval(setId);
+	
+	//超时调用 
+	// var num = 0;
+	// var max = 10;
+	// var intervalId = null;
+
+	// function incrementNumber(){
+	// 	num++;
+	// 	alert("hello");
+	// 	if (num == max) {
+	// 		clearInterval(intervalId);
+	// 		alert("Done");
+	// 	}
+	// }
+	// intervalId  = setInterval(incrementNumber ,300);	
+ 
+	// var num = 0;
+	// var max = 10;
+
+	// function incrementNumber(){
+	// 	num++;
+		
+	// 	if(num <max){
+	// 		alert("hello");
+	// 		setTimeout(incrementNumber,300);
+	// 	}else{
+	// 		alert("Done");
+	// 	}
+	// }	
+	// setTimeout(incrementNumber,300);
+
+	// if(confirm("Are you sure?")){
+	// 	alert("yes");
+	// }else {
+	// 	alert("no");
+	// }
+
+	// var str =  prompt("What's your name ?" ,"youthcity");
+	// alert(str);
+	
+	function getQueryStringArgs(){
+		// location.search  返回从问号到URL末尾的所有内容
+		// var temp ="?q=javascript&num=10";
+		var qs = (location.search.length > 0 ?  location.search.substring(1) :""),
+		//保存数据的对象
+		args = [],
+
+		items = qs.length ? qs.split("&") :[],
+		item = null,
+		name = null,
+		value = null,
+		i = 0,
+		len = items.length;
+
+		for(i = 0 ;i<len ; i++){
+			item = items[i].split("=");
+			name = decodeURIComponent(item[0]);
+			value = decodeURIComponent(item[1]);
+			
+			if(name.length){
+				args[name] = value;
+			}
+		}
+
+		return args;
+	}
+	var a =  getQueryStringArgs();
+	for( key in a ){
+		alert(a[key]);
+	}
 	</script>
 </body>
 </html>

@@ -153,4 +153,7 @@ var str =  prompt("What's your name ?" ,"youthcity");
 		alert(a[key]);
 	}
 ```	
-
+## chapter10
+1. 动态脚本
+2. 动态样式
+3. 操作表格

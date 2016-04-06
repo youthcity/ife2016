@@ -5,7 +5,7 @@
 	<title>Test_20160330</title>
 </head>
 <body>
-
+	<button id="myBtn">点我</button>
 
 	<script type="text/javascript">
 	// var colors =["red", "blue" , "green"];
@@ -26,7 +26,7 @@
 	// 		return 0;
 	// 	}
 	// }
-
+     
 	// var values = [0, 1, 5, 10, 15];
 	// var result =  values.sort(compare);
 	// result =  result.reverse()
@@ -147,36 +147,85 @@
 	// var str =  prompt("What's your name ?" ,"youthcity");
 	// alert(str);
 	
-	function getQueryStringArgs(){
-		// location.search  返回从问号到URL末尾的所有内容
-		// var temp ="?q=javascript&num=10";
-		var qs = (location.search.length > 0 ?  location.search.substring(1) :""),
-		//保存数据的对象
-		args = [],
+	// function getQueryStringArgs(){
+	// 	// location.search  返回从问号到URL末尾的所有内容
+	// 	// var temp ="?q=javascript&num=10";
+	// 	var qs = (location.search.length > 0 ?  location.search.substring(1) :""),
+	// 	//保存数据的对象
+	// 	args = [],
 
-		items = qs.length ? qs.split("&") :[],
-		item = null,
-		name = null,
-		value = null,
-		i = 0,
-		len = items.length;
+	// 	items = qs.length ? qs.split("&") :[],
+	// 	item = null,
+	// 	name = null,
+	// 	value = null,
+	// 	i = 0,
+	// 	len = items.length;
 
-		for(i = 0 ;i<len ; i++){
-			item = items[i].split("=");
-			name = decodeURIComponent(item[0]);
-			value = decodeURIComponent(item[1]);
+	// 	for(i = 0 ;i<len ; i++){
+	// 		item = items[i].split("=");
+	// 		name = decodeURIComponent(item[0]);
+	// 		value = decodeURIComponent(item[1]);
 			
-			if(name.length){
-				args[name] = value;
-			}
-		}
+	// 		if(name.length){
+	// 			args[name] = value;
+	// 		}
+	// 	}
 
-		return args;
-	}
-	var a =  getQueryStringArgs();
-	for( key in a ){
-		alert(a[key]);
-	}
+	// 	return args;
+	// }
+	// var a =  getQueryStringArgs();
+	// for( key in a ){
+	// 	alert(a[key]);
+	// }
+	
+	// var EventUtil = {
+	// 	addHandler : function(element, type, handler){
+	// 		if(element.addEventLister){
+	// 			element.addEventLister(type, handler, false);
+	// 		}else if(element.attachEvent){
+	// 			element.attachEvent("on"+type,handler);
+	// 		}else {
+	// 			element["on"+type] = handler;
+	// 		}
+	// 	},
+	// 	removeHandler : function(element, type, handler){
+	// 		if(element.removeEventListener){
+	// 			element.removeEventListener(type, handler, false);
+	// 		}else if(element.detachEvent){
+	// 			element.detachEvent("on"+type,handler);
+	// 		}else {
+	// 			element["on"+type]  = null;
+	// 		}
+	// 	}
+	// };
+
+	// var btn = document.getElementById("myBtn");
+	// var handler = function (){
+	// 	alert("click");
+	// };
+	// EventUtil.addHandler(btn, "click", handler);
+
+	// EventUtil.removeHandler(btn, "click", handler);
+	
+	// var btn = document.getElementById("myBtn");
+	// var handler = function(event){
+	// 	switch(event.type){
+	// 		case "click":
+	// 			alert("clicked");
+	// 			break;
+	// 		case "mouseover":
+	// 			event.target.style.backgroundcolor = "red";
+	// 			break;
+	// 		case "mouseout":
+	// 			alert("hello");
+	// 			break;
+	// 	}
+	// };
+
+	// btn.onclick = handler;
+	// btn.onmouseover = handler;
+	// btn.onmouseout = handler;
+
 	</script>
 </body>
 </html>

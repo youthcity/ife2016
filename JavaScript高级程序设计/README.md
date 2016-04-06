@@ -157,3 +157,36 @@ var str =  prompt("What's your name ?" ,"youthcity");
 1. 动态脚本
 2. 动态样式
 3. 操作表格
+
+
+## chapter13
+1. 事件流 
+IE的事件流是 **事件冒泡流**  Netscape 是 **事件捕获流**
+2. 事件处理程序
+ - `element.onclick = function(){}; `
+ - `element.addEventListener("click", function(){},flase);`  当为true 时，表示在捕获阶段调用事件处理程序；
+ 当为false时，表示在冒泡阶段调用事件处理程序；
+3. 跨浏览器的事件处理程序
+```
+var EventUtil = {
+		addHandler : function(element, type, handler){
+			if(element.addEventLister){
+				element.addEventLister(type, handler, false);
+			}else if(element.attachEvent){
+				element.attachEvent("on"+type,handler);
+			}else {
+				element["on"+type] = handler;
+			}
+		},
+		removeHandler : function(element, type, handler){
+			if(element.removeEventListener){
+				element.removeEventListener(type, handler, false);
+			}else if(element.detachEvent){
+				element.detachEvent("on"+type,handler);
+			}else {
+				element["on"+type]  = null;
+			}
+		}
+	};
+``` 
+

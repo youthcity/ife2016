@@ -6,6 +6,12 @@
 </head>
 <body>
 	<button id="myBtn">点我</button>
+	<ul id = "myLinks">
+		<li id="goSomeWhere">Go somewhere</li>
+		<li id="doSomething">Do SomeThing</li>
+		<li id="sayHi">Say Hi</li>
+	</ul>
+
 
 	<script type="text/javascript">
 	// var colors =["red", "blue" , "green"];
@@ -178,26 +184,32 @@
 	// 	alert(a[key]);
 	// }
 	
-	// var EventUtil = {
-	// 	addHandler : function(element, type, handler){
-	// 		if(element.addEventLister){
-	// 			element.addEventLister(type, handler, false);
-	// 		}else if(element.attachEvent){
-	// 			element.attachEvent("on"+type,handler);
-	// 		}else {
-	// 			element["on"+type] = handler;
-	// 		}
-	// 	},
-	// 	removeHandler : function(element, type, handler){
-	// 		if(element.removeEventListener){
-	// 			element.removeEventListener(type, handler, false);
-	// 		}else if(element.detachEvent){
-	// 			element.detachEvent("on"+type,handler);
-	// 		}else {
-	// 			element["on"+type]  = null;
-	// 		}
-	// 	}
-	// };
+	var EventUtil = {
+		addHandler : function(element, type, handler){
+			if(element.addEventLister){
+				element.addEventLister(type, handler, false);
+			}else if(element.attachEvent){
+				element.attachEvent("on"+type,handler);
+			}else {
+				element["on"+type] = handler;
+			}
+		},
+		removeHandler : function(element, type, handler){
+			if(element.removeEventListener){
+				element.removeEventListener(type, handler, false);
+			}else if(element.detachEvent){
+				element.detachEvent("on"+type,handler);
+			}else {
+				element["on"+type]  = null;
+			}
+		},
+		getTarget : function(event){
+			return event.target || event.srcElement;
+		},
+		getEvent : function(event){
+			return event ? event : window.event;
+		}
+	};
 
 	// var btn = document.getElementById("myBtn");
 	// var handler = function (){
@@ -225,6 +237,25 @@
 	// btn.onclick = handler;
 	// btn.onmouseover = handler;
 	// btn.onmouseout = handler;
+
+	// var list = document.getElementById('myLinks');
+
+	// EventUtil.addHandler(list,"click",function(event){
+	// 	event = EventUtil.getEvent(event);
+	// 	var target = EventUtil.getTarget(event);
+	// 	switch(target.id){
+	// 		case "doSomething":
+	// 		document.title = "I change the document's title";
+	// 		break;
+	// 		case "goSomeWhere":
+	// 		location.href = "http://www.baidu.com";
+	// 		break;
+	// 		case "sayHi":
+	// 		alert("Hi");
+	// 		break;
+	// 	}
+	// });
+
 
 	</script>
 </body>

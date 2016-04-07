@@ -190,3 +190,23 @@ var EventUtil = {
 	};
 ``` 
 
+ 4. 时间委托
+ ```
+ 	var list = document.getElementById('myLinks');
+
+	EventUtil.addHandler(list,"click",function(event){
+		event = EventUtil.getEvent(event);
+		var target = EventUtil.getTarget(event);
+		switch(target.id){
+			case "doSomething":
+			document.title = "I change the document's title";
+			break;
+			case "goSomeWhere":
+			location.href = "http://www.baidu.com";
+			break;
+			case "sayHi":
+			alert("Hi");
+			break;
+		}
+	});
+ ```

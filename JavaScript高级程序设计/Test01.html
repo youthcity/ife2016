@@ -11,6 +11,16 @@
 		<li id="doSomething">Do SomeThing</li>
 		<li id="sayHi">Say Hi</li>
 	</ul>
+ 
+	<form id="myForm">
+		<ul>
+			<li><input type="radio" name="color" value="red">Red</li>
+			<li><input type="radio" name="color" value="green">Green</li>
+			<li><input type="radio" name="color" value="blue">Blue</li>
+		</ul>
+
+		<button type="submit" id="sbt">提交</button>
+	</form>
 
 
 	<script type="text/javascript">
@@ -256,6 +266,14 @@
 	// 	}
 	// });
 
+	var form = document.getElementById("myForm");
+	var filed = form.elements[0];
+
+	filed.value = "wo am i";
+	// filed.focus();
+	// filed.disabled = true;
+
+	EventUtil.
 
 	</script>
 </body>

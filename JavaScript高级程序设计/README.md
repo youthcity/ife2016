@@ -210,3 +210,8 @@ var EventUtil = {
 		}
 	});
  ```
+
+ ## chapter14 
+ 1. 获取表单字段
+ `elements['name']`和`elements[0]`
+ 

@@ -214,4 +214,68 @@ var EventUtil = {
  ## chapter14 
  1. 获取表单字段
  `elements['name']`和`elements[0]`
- 
+ 2. 禁止重复提交
+```
+EventUtil.addHandler(form, "submit", function(event){
+event = EventUtil.getEvent(event);
+var target = EventUtil.getTarget(event);
+//取得提交按钮
+var btn = target.elements['submit'];
+
+btn.disabled = true;
+});
+```	
+
+## chapter15 使用Canvas绘图
+1. 要在这画布(canvas)上绘图，需要取得绘图上下文。需要调用getContext()方法,传入"2d",就可以取得2D上下文对象。
+2. 填充和描边
+`content.strokeStyle = "颜色名、十六进制码、rgb、rgba、hsl、hsla"`  和
+`content.fillStyle = "#ff0000"`
+3. 绘制矩形
+`fillRect(0,0,10,10)` 和 `strokeRect(0,0,10,10)`   参数前两个是坐标，后两个是宽和高。
+4. `clearRect()`清楚画布矩形区域
+```
+var drawing = document.getElementById('drawing');
+//确定浏览器支持<canvas>
+if (drawing.getContext) {
+	// 获得上下文
+	var content = drawing.getContext("2d");
+	//绘制红色矩形
+	content.fillStyle = "#ff0000";
+	content.fillRect(10,10,50,50);
+	//绘制半透明的蓝色描边矩形
+	content.strokeStyle = "rgba(0,0,255,0.5)";
+	content.strokeRect(30,30,50,50);
+	// clearRect() 方法可以清除画布的矩形区域
+	content.clearRect(40,40,10,10);
+}
+```
+5. 绘制路径
+要绘制路径，首先必须调用beginPath(),表示开始绘制路径。
+```
+var drawing = document.getElementById('drawing');
+// 确定浏览器支持
+if (drawing.getContext) {
+	// statement
+	var context = drawing.getContext("2d");
+	//开始绘路径
+	context.beginPath();
+
+	//绘制外圆
+	context.arc(100,100,99,0,2*Math.PI,false);
+	
+	//绘制内圆
+	context.moveTo(194, 100);
+	context.arc(100, 100, 94, 0 , 2*Math.PI, false);		
+
+	//绘制分针
+	context.moveTo(100, 100);
+	context.lineTo(100,15);
+
+	//绘制时针
+	context.moveTo(100, 100);
+	context.lineTo(35,100);
+	//描边
+	context.stroke();
+}
+```

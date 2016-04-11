@@ -279,3 +279,22 @@ if (drawing.getContext) {
 	context.stroke();
 }
 ```
+6. 设置阴影
+```
+context.shadowOffsetX = 5;
+context.shadowOffsetY = 5;
+context.shadowBlur = 4;
+context.shadowColor = "rgba(0,0,0, 0.5)";
+```
+7. 渐变
+```
+//创建渐变对象
+var gradient = context.createLinearGradient(10,10,80,80);
+//设置色标
+gradient.addColorStop(0, "white");
+gradient.addColorStop(1, "black");
+//绘制渐变矩形
+//将 gradient对象赋值给fillStyle
+context.fillStyle = gradient;
+context.fillRect(10,10,50,50);
+```

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 01</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		function duplicates(arr) {
+			var a = [] ,b = [],i,j,len;
+		    for(i=0, len =arr.length;i <len; i++){
+		        if(!b[arr[i]]){
+		            b[arr[i]] =1;
+		            continue;
+		        }
+		        b[arr[i]] += 1;
+		    }
+		    
+		    for(j = 0,len = b.length; j<len ; i++){
+		        if(b[j]>1){
+		            a.push(j);
+		        }
+		    }
+		    return a;
+		}
+
+		var arrr =  duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]).sort();
+		console.log(arrr);
+	</script>
+</body>
+</html>

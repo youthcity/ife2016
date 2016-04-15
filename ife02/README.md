@@ -1,4 +1,15 @@
 # JavaScript学习
+## 学习汇总
+1. split() 方法通过把字符串分割成子字符串来把一个 String 对象分割成一个字符串数组。[String.prototype.split()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+2. filter() 方法使用指定的函数测试所有元素，并创建一个包含所有通过测试的元素的新数组。
+[Array.prototype.filter()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+用法`arr.filter(callback[, thisArg])` callback传入三个参数 (element, index, array)
+元素的值 元素的索引 被遍历的数组
+3. unicode编码 \u4e00-\u9fa5 
+是中文的范围
+4.  
+
+
 
 ## 常见资源
 [array 方法的完整文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
@@ -142,6 +153,7 @@ a.sort([cmpfn])	依据 cmpfn 返回的结果进行排序，如果未指定比较
 a.splice(start, delcount[, item1[, ...[, itemN]]])	从 start 开始，删除 delcount 个元素，然后插入所有的 item。
 a.unshift([item])	将 item 插入数组头部，返回数组新长度（考虑 undefined）。
 ```
+### task08
 
 
 

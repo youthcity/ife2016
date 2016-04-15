@@ -18,7 +18,7 @@ $("#insert").onclick = function(){
 	console.log("赋值后");
 	console.log(arrData);
 
-	render(null);
+	render();
 
 };
 

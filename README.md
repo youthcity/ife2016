@@ -6,6 +6,7 @@
 - [模仿网页首页](http://youthcity.github.io/ife2016/ife01/task_07.html)
 
 ### js 练习
+- [二叉树搜索](http://youthcity.github.io/ife2016/ife02/task_10.html)
 - [实现Tag功能并悬停可删除](http://youthcity.github.io/ife2016/ife02/task_09.html)
 - [批量输入并实现查询](http://youthcity.github.io/ife2016/ife02/task_08.html)
 - [模拟排序](http://youthcity.github.io/ife2016/ife02/task_07.html)

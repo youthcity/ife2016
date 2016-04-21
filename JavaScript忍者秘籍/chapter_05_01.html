@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chapter 05 01</title>
+	<style type="text/css">
+	.fail{
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+		<div id="results"></div>
+<script type="text/javascript">
+	//设置断言
+	function assert(value , desc){
+		var li = document.createElement("li");
+		li.className = value ? "pass" : "fail";
+		li.appendChild(document.createTextNode(desc));
+		document.getElementById("results").appendChild(li);
+	}
+
+	//不那么简单的闭包
+	var outerValue = 'ninja';
+
+	var later;
+
+	function outerFunction(){
+		var innerValue = 'samurai';
+
+		function innerFunction(){
+			assert(outerValue,"I can see the ninja");
+			assert(innerValue,"I can see the samurai");
+		}
+		later = innerFunction;
+	}
+	console.log(typeof innerFunction ==  "function");
+	outerFunction();
+	later();
+
+	//5.4 使用闭包模拟私有变量
+	function Ninja(){
+		var feints =  0;
+
+		this.getFeints = function(){
+			return feints;
+		};
+
+		this.feint = function(){
+			feints++;
+		};
+	}
+
+	var ninja = new Ninja();
+
+	ninja.feint();
+
+	assert(ninja.getFeints() == 1, "we're able to access the internal feint count.");
+
+	assert(ninja.feints == undefined,"data is inaccessible to us.");
+
+	
+</script>
+</body>
+</html>

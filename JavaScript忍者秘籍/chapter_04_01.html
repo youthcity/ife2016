@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chapter 4 函数</title>
+	<style type="text/css">
+	.fail{
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+	<div id="results"></div>
+	<script type="text/javascript">
+		function isPalindrome(text){
+			if (text.length <= 1)  return true;
+			if (text.charAt(0) != text.charAt(text.length-1)) return false;
+			return isPalindrome(text.substring(1,text.length-1));
+		}
+
+		console.log(isPalindrome("a"));
+		console.log(isPalindrome("abaaba"));
+		console.log(isPalindrome("asb"));
+
+		/*
+		啾啾声~
+		 */
+		function chirp(n){
+			return n >1 ? chirp(n-1) +"-chirp": "chirp"; 
+		}
+		console.log(chirp(5));
+
+		//断言
+		function assert(value , desc){
+			var li = document.createElement("li");
+			li.className = value? "pass": "fail";
+			li.appendChild(document.createTextNode(desc));
+			document.getElementById("results").appendChild(li);
+		}
+
+		assert(false, "you are right.");
+	</script>
+</body>
+</html>

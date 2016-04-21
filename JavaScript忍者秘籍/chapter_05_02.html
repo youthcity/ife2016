@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chapter 05 02</title>
+	<style type="text/css">
+	.fail{
+		background-color: red;
+	}
+	.box{
+		margin-top: 50px;
+		width: 100px;
+		height: 100px;
+		background-color: #36b7f7;
+		color: #fff;
+		font-weight: bold;
+	}
+	</style>
+</head>
+<body>
+		<button type="button" id="testButton">Go!</button>
+		<div id="box" class="box">我是一个盒子</div>
+		<!-- assert -->
+		<div id="results"></div>
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript">
+	//设置断言
+	function assert(value,desc){
+		var li = document.createElement("li");
+		li.className = value ? "pass" : "fail";
+		li.appendChild(document.createTextNode(desc));
+		document.getElementById("results").appendChild(li);
+	}
+
+	//在 Ajax中请求的callback里使用闭包
+	jQuery('#testButton').click(function(){
+		
+		var elem$ = jQuery("#testButton");
+
+		elem$.html("Loading...");
+
+		jQuery.ajax({
+			url : "test.html",
+			success: function(html){
+				assert(elem$, "We can see elem$, via the closure for this callsback");
+				elem$.html(html);
+			}
+		});
+
+	});
+
+	//在计时器间隔回调中使用闭包
+	function animateIt(elementId){
+
+		var elem = document.getElementById(elementId);
+		var tick = 0;
+
+		var timer = setInterval(function(){
+			if (tick <100) {
+				elem.style.marginLeft = elem.style.marginTop = tick +"px";
+				tick++;
+			}
+			else{
+				clearInterval(timer);
+				assert(tick == 100,
+					"Tick accessed via a closure");
+				assert(elem,
+					"elem also accessed via a closure.");
+				assert(timer,
+					"Timer reference also obtainer via a closure.");
+			}
+		},100);
+	}
+
+	animateIt('box');
+</script>
+
+</body>
+</html>

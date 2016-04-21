@@ -159,6 +159,7 @@
 	// 	}
 	// }
 //快排
+//i为文件第一个，j为文件最后一个
 function quickSort(i,j){
 		
 	if (i<j) {

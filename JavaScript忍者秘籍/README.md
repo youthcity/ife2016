@@ -10,7 +10,6 @@ function assert(value , desc){
 		document.getElementById("results").appendChild(li);
 	}
 ```
-
 ## chapter 4 挥舞函数
 #### 检测回文
 ```
@@ -24,3 +23,5 @@ function isPalindrome(text){
 }
 ```
 #### 
+
+## chapter5 闭包

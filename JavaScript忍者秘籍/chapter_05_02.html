@@ -19,6 +19,7 @@
 </head>
 <body>
 		<button type="button" id="testButton">Go!</button>
+		<button id="test">Click Me!</button>
 		<div id="box" class="box">我是一个盒子</div>
 		<!-- assert -->
 		<div id="results"></div>
@@ -73,6 +74,27 @@
 	}
 
 	animateIt('box');
+
+	//给函数绑定一个特定的上下文
+	function bind(context, name){
+		return function(){
+			return context[name].apply(context,arguments);
+		};
+	}
+
+	var button ={
+	//保存button的状态
+		clicked: false,
+
+		click: function(){
+			this.clicked = true;
+			assert(button.clicked,"The button has been clicked.");
+		}
+	};
+
+	var elem = document.getElementById("test");
+	// elem.addEventListener("click", button.click,false);
+	elem.addEventListener("click",bind(button,"click"),false);
 </script>
 
 </body>

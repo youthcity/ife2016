@@ -95,6 +95,50 @@
 	var elem = document.getElementById("test");
 	// elem.addEventListener("click", button.click,false);
 	elem.addEventListener("click",bind(button,"click"),false);
+
+	//在Prototype库中，函数bind代码
+	Function.prototype.bind = function(){
+		var fn = this,
+		args = Array.prototype.slice.call(arguments),
+		object = args.shift();
+		console.log(object);
+		console.log(args.concat(Array.prototype.slice.call(arguments)));
+
+		return function(){
+			return fn.apply(object,args.concat(Array.prototype.slice.call(arguments)));
+		};
+
+	};
+
+	var myObject = {};
+	function myFunction(){
+		return this == myObject;
+	}
+	assert(!myFunction(), "Context is not set yet.");
+
+	var aFunction = myFunction.bind(myObject);
+	assert(aFunction(),"Context is set properly.");
+
+	//分部函数
+	Function.prototype.partial = function(){
+		var fn = this,
+		args = Array.prototype.slice.call(arguments);
+		return function(){
+			var arg = 0;
+			for(var i = 0; i <args.length && arg < arguments.length; i++){
+				if (args[i] === undefined) {
+					args[i] = arguments[arg++];
+				}
+			}
+			return fn.apply(this,args);
+		};
+	};
+
+	var delay = setTimeout.partial(undefined, 10);
+	delay(function (){
+		assert(true, "A call to this function will be delayed 10ms.");
+	});
+	
 </script>
 
 </body>

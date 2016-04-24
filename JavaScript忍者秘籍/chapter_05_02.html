@@ -138,6 +138,28 @@
 	delay(function (){
 		assert(true, "A call to this function will be delayed 10ms.");
 	});
+
+	//函数的记忆方法
+	Function.prototype.memoried = function(key){
+		this._values = this._values || {};
+		return this._values[key] !== undefined?
+		 this._values[key]:
+		 this._values[key] = this.apply(this,arguments);
+	};
+
+	function isPrime(num){
+		var prime = num != 1;
+		for(var i = 2; i < num; i++){
+			if (num % i == 0 ) {
+				prime = false;
+				break;
+			}
+		}
+		return prime;
+	}
+
+	assert(isPrime.memoried(5),"The function works 5 is prime.");
+
 	
 </script>
 

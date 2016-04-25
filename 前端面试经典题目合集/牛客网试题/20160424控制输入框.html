@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>控制一个文本框只能输入正整数</title>
+</head>
+<body>
+	<p>请用JavaScript实现，控制一个文本框只能输入正整数，如输入不符合条件则文本框全部字体标红。要求写出完整的文本框HTML代码和JavaScript逻辑代码。 </p>
+	<input type="text" id="input">
+
+	<script type="text/javascript">
+		var input = document.getElementById('input');
+		// console.log(input);
+	
+		input.addEventListener("keyup",function(){
+			var regex = /\d+/;
+			if ( input.value && !regex.test(input.value)) {
+				input.style.color = '#ff0000';
+			}else{
+				input.style.color = '#000';
+			}
+		},false);
+	</script>
+</body>
+</html>

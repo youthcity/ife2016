@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>账户密码验证</title>
+	<style type="text/css">
+	input{
+		margin-bottom: 10px;
+	}
+
+	p{
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+	<form name="login-form" method="post">
+		<label>账号：<input type="text" name="username"></label>
+		<br>
+		<label>密码：<input type="password" name="password"></label>
+		<br>
+		<button type="submit">Submit</button> &nbsp;&nbsp;
+		<button type="reset">Reset</button>
+	</form>
+		<script type="text/javascript">
+			var getCheckObject = function(){
+			var tipP = tip = document.createElement('p');
+			tip.appendChild(document.createTextNode("密码错误"));
+			var tipU = tip = document.createElement('p');
+			tip.appendChild(document.createTextNode("用户密码错误"));
+
+			function addErrorTip(node, type){
+				node.className += " "+"error"+" ";
+				if (type == "username") {
+					node.parentNode.appendChild(tipU);
+				}else if(type == "password"){
+					node.parentNode.appendChild(tipP);
+				}
+			}
+
+			function removeErrorTip(node, type){
+				node.className = "";
+				if (type == "username") {
+					node.parentNode.removeChild(tipU);
+				}else if (type = "password") {
+					node.parentNode.removeChild(tipP);
+				}
+			}
+
+			function isVaildName(name){
+				if (name === "") {
+					return false;
+				}
+				return true;
+			}
+
+			function isVaildPassword(password){
+				var lenIsEnough = password.length >6;//密码长度大于6
+				var hasDigital = /[\d]+/.test(password);//密码含有数字
+				var hasCharater = /[\w]+/.test(password);//密码含有字母
+				return lenIsEnough && hasDigital && hasCharater;
+			}
+
+			return {
+				addErrorTip : addErrorTip,
+				removeErrorTip : removeErrorTip,
+				isVaildName : isVaildName,
+				isVaildPassword : isVaildPassword
+			};
+		};
+
+		var checkObj = getCheckObject(),
+		    form = document.forms['login-form'],
+		    username = form.username,
+		    password = form.password;
+
+		 	form.addEventListener('submit', function(event){
+		 		if (!checkObj.isVaildName(username.value)) {
+		 			checkObj.addErrorTip(username,'username');
+		 			event.preventDefault();
+		 		}else if(!checkObj.isVaildPassword(password.value)){
+		 			checkObj.addErrorTip(password,'password');
+		 			event.preventDefault();
+		 		}
+		 	},false);   
+
+		 	form.addEventListener('reset', function(event){
+		 		checkObj.removeErrorTip(username,'username');
+		 		checkObj.removeErrorTip(password,'password');
+		 	},false);
+
+		 	username.addEventListener('focus', function(){
+		 		checkObj.removeErrorTip(username,'username');
+		 	},false);
+
+		 	username.addEventListener('blur', function(){
+		 		if (!checkObj.isVaildName(username.value)) {
+		 			checkObj.addErrorTip(username,'username');
+		 		}
+		 	},false);
+
+		 	password.addEventListener('focus', function(){
+		 		checkObj.removeErrorTip(password,'password');
+		 	},false);
+
+		 	password.addEventListener('blur', function(){
+		 		if (!checkObj.isVaildPassword(password.value)) {
+		 			checkObj.addErrorTip(password,'password');
+		 		}
+		 	},false);
+
+	</script>
+</body>
+</html>

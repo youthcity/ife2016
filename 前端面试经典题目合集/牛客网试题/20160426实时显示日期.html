@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>编写一个JavaScript函数，实时显示当前时间，格式“年-月-日 时:分:秒”</title>
+</head>
+<body>
+	<div id="time"></div>
+	<script type="text/javascript">
+		function startTime(){
+			var date = new Date(),
+				year = date.getFullYear(),
+				month = date.getMonth()+1,
+				day = date.getDate(),
+				hour = date.getHours(),
+				mintues = date.getMinutes(),
+				seconds = date.getSeconds();
+
+				month = checkTime(month);
+				day = checkTime(day);
+				hour = checkTime(hour);
+				mintues = checkTime(mintues);
+				seconds = checkTime(seconds);
+
+			var str = year+"-"+month+"-"+day+"-"+" "+hour+":"+mintues+":"+seconds;
+				document.getElementById('time').innerHTML = str;
+				setTimeout(startTime,500);
+		}
+
+		function checkTime(t){
+			return t>10? t:"0"+t; 
+		}
+
+		startTime();
+
+		//中央定时器
+		var timers = {
+			timerID : 0,
+			timers : [],
+
+			add: function(fn){
+				this.timers.push(fn);
+			},
+
+			start: function(){
+				if (this.timerID) return;
+				(function runNext(){
+					if (timers.timers.length>0) {
+						for (var i = 0; i < timers.timers.length; i++) {
+							if (timers.timers[i]() === false) {
+								timers.timers.splice(i, 1);
+								i--;
+							}
+							
+						}
+					}
+					timers.timerID = setTimeout(runNext, 0);
+				})();
+			},
+
+			stop: function(){
+				clearTimeout(this.timerID);
+				this.timerID = 0;
+			}
+		};
+
+		timers.add(startTime);
+		timers.start();
+	</script>
+</body>
+</html>

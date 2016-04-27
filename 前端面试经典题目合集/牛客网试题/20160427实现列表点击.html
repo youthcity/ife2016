@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ol>
+  <li>打开冰箱门</li>
+  <li>把大象放进去</li>
+  <li>关上冰箱门</li>
+</ol>
+
+<script type="text/javascript">
+	var oList = document.getElementsByTagName('li');
+	console.log(oList);
+
+	for (var i = 0; i < oList.length; i++) {
+		oList[i].onclick = function(){
+			if (this.selected) {
+				console.log(this);
+				this.style.background = '';
+			}else {
+				console.log(this);
+				this.style.background = 'yellow';
+			}
+			this.selected = !this.selected;
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chapter 8 驯服线程和定时器</title>
+	<style type="text/css">
+	#box{
+		width: 80px;
+		height: 80px;
+		background-color: #808080;
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">Hello World </div>
+	<script type="text/javascript">
+		//中央定时器
+		var timers = {
+			timerID : 0,
+			timers : [],
+
+			add: function(fn){
+				this.timers.push(fn);
+			},
+
+			start: function(){
+				if (this.timerID) return;
+				(function runNext(){
+					if (timers.timers.length>0) {
+						for (var i = 0; i < timers.timers.length; i++) {
+							if (timers.timers[i]() === false) {
+								timers.timers.splice(i, 1);
+								i--;
+							}
+							
+						}
+					}
+					timers.timerID = setTimeout(runNext, 100);
+				})();
+			},
+
+			stop: function(){
+				clearTimeout(this.timerID);
+				this.timerID = 0;
+			}
+		};
+
+		var box = document.getElementById('box'),
+			x = 0,
+			y = 20;
+
+		timers.add(function(){
+			box.style.left = x +"px";
+			if (++x > 200) return false;
+		});	
+
+		timers.add(function(){
+			box.style.top = y +"px";
+			y +=2;
+			if(y > 120) return false;
+		});
+
+		timers.start();
+	</script>
+</body>
+</html>

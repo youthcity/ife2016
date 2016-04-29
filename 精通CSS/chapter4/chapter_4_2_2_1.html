@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用CSS3多背景特性实现的圆角框</title>
+	<style type="text/css">
+	.box{
+		background-image: url(img/top-left.gif),
+						  url(img/top-right.gif),
+						  url(img/bottom-left.gif),
+						  url(img/bottom-right.gif);
+
+		background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+		
+		background-position: top left, top right, bottom left, bottom right;
+	}
+
+
+	h2,p{
+		padding: 20px;
+	}
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h2>Heading</h2>
+		<p>Content</p>
+	</div>
+</body>
+</html>

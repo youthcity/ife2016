@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chapter4_2_2_2  border-image属性 round铺满 </title>
+	<style type="text/css">
+	body{
+		padding: 0;
+		margin: 0;
+	}
+/*	.box{
+		width: 400px;
+		border-radius: 1em;
+		background-color: #effce7;
+	}
+	h2,p{
+		padding-right: 20px;
+		padding-left: 20px;
+	}*/
+	.box{
+		-webkit-border-image: url(img/corners.gif)
+		25% 25% 25% 25% / 25px round round;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h2>Heading</h2>
+		<p>Content</p>
+	</div>
+</body>
+</html>

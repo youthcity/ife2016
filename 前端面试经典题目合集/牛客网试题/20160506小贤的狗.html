@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>20160506小贤的狗</title>
+</head>
+<body>
+	<p>.小贤是一条可爱的小狗(Dog)，它的叫声很好听(wow)，每次看到主人的时候就会乖乖叫一声(yelp)。从这段描述可以得到以下对象</p>
+	<p>创建 JavaScript 对象<br>
+	通过 JavaScript，您能够定义并创建自己的对象。<br>
+	创建新对象有两种不同的方法：<br>
+	定义并创建对象的实例<br>
+	使用函数来定义对象，然后创建新的对象实例</p>
+	<br>
+	<br>
+	<p>小芒和小贤一样，原来也是一条可爱的小狗，可是突然有一天疯了(MadDog)，一看到人就会每隔半秒叫一声(wow)地不停叫唤(yelp)。请根据描述，按示例的形式用代码来实。（继承，原型，setInterval）</p>
+
+	<script type="text/javascript">
+		// answer  使用对象构造器
+		function Dog(){
+			this.wow = function(){
+				alert("Wow");
+			},
+			this.yelp = function(){
+				this.wow();
+			}
+		}
+
+		// my answer 1  替代语法
+		var Dog = {
+			 wow : function(){
+				console.log("wow");
+			},
+			yelp:function(master){
+				if (master === "主人") {
+					this.wow();
+				}
+			}
+		}
+
+		//my answer2  创建直接的实例
+		var Dog = new Object();
+		Dog.wow = function(){	alert("Wow");	};
+		Dog.yelp = function(){ this.wow();   };
+
+		//Q2
+		//answer
+		function Dog(){
+			this.wow =function(){
+				alert("wow");
+			},
+			this.yelp = function(){
+				this.wow();
+			}
+		}
+
+		function MadDog(){
+			this.yelp = function(){
+				var self = this;
+				setInterval(function(){
+					self.wow();
+				},500);
+			}
+		}
+
+		MadDog.prototype = new Dog();
+		
+		var dog = new Dog();
+		dog.yelp();
+		var madDog = new MadDog();
+		madDog.yelp();
+	
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定义一个log方法，让它可以代理console.log的方法</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//方法一
+		function log(msg){
+			return console.log(msg);
+		}
+		log("你好");
+
+		//方法二
+		//可以同时传入多个变量，当需要输入多条消息
+		function log(msg){
+			return console.log.apply(console, arguments);
+		}
+
+		// log("你好","gao",'\n算法');
+		
+		//我们要给每个log方法添加一个”(app)”前缀，比如’hello world!’ ->’(app)hello world!’。方法如下：
+		function log(msg){
+			var args = Array.prototype.slice.apply(arguments);
+
+			args.unshift('(app)');
+			return console.log.apply(console, args);
+		} 
+	</script>
+</body>
+</html>

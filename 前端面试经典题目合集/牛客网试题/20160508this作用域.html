@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对作用域的理解</title>
+	<style type="text/css">
+	p{
+		width: 600px;
+		word-break: normal;
+	}
+	</style>
+</head>
+<body>
+<p>问两处console输出什么？为什么？
+
+答案是1和undefined。
+
+func是在winodw的上下文中被执行的，所以会访问不到count属性。
+
+继续追问，那么如何确保Uesr总是能访问到func的上下文，即正确返回1。正确的方法是使用Function.prototype.bind。兼容各个浏览器完整代码如下：</p>
+	<script type="text/javascript">
+	var User = {
+		count: 1,
+
+		getCount: function() {
+			return this.count;
+		}
+	};
+
+	console.log(User.getCount()); 
+	// 1
+
+	var func = User.getCount;
+	console.log(func()); //undefined
+
+	// 题目二
+	Function.prototype.bind = Function.prototype.bind || function(context){
+		var self =this;
+		// console.log(this);
+		return function(){
+			return self.apply(context, arguments);
+		};
+	}
+
+	var func = User.getCount.bind(User);
+	console.log(func());
+	</script>
+</body>
+</html>

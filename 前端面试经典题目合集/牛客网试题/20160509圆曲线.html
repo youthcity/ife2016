@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆曲线</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var R,a;
+		function T(R,a){
+			var a = a/360*Math.PI;
+			return R*Math.sin(a);
+		}
+		//调用函数T,插入需要输入的变量
+		console.log(T(10,180));	
+
+		function L(R,a){
+			return Math.PI*a/180*R;
+		}
+		//调用第二个函数
+		console.log(L(10,180));
+
+		function E(R,a){
+			var a = a/360*Math.PI;
+			return R*((1/Math.cos(a/2))-1);
+		}
+
+		//调用第三个函数
+		console.log(E(10,180));
+
+		function q(R,a){
+			return 2*T(R,a)-L(R,a);
+		}
+
+		console.log(q(10,180));
+	</script>
+</body>
+</html>

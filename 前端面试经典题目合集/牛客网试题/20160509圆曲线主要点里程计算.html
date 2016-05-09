@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆曲线主点里程计算</title>
+</head>
+<body>
+	<script type="text/javascript">	
+		//依次传入变量 jdOfMileage,T,L,E,q
+		function main(jdOfMileage,T,L,E,q){
+			var zy = jdOfMileage-T;
+			console.log("ZY里程="+ zy);
+			var yz = zy+L;
+			console.log("YZ里程="+yz);
+			var qz = yz-L/2;
+			console.log("QZ里程="+qz);
+			var jd1 = qz+q/2;
+			console.log("jd1="+jd1);
+			var jd2 = zy+T;
+			console.log("jd2="+jd2);
+			if (Math.round(jd1) === Math.round(jd2)) {
+				console.log("JD里程=QZ里程+q/2=ZY里程+T");
+			}else {
+				console.log("JD里程=QZ里程+q/2!=ZY里程+T");
+			}
+
+		}
+
+		//举个栗子 依次传入jdOfMileage,T,L,E,q
+		main(982.4,32.55,62.47,5.71,2.63);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>极坐标法</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//已知x_ji,y_ji,a_i_1,a_i;
+		function coordinates1(x_ji,y_ji,a_i_1,a_i,T){
+			//转换为弧度
+			var x_ji = x_ji/180*Math.PI;
+			var y_ji = y_ji/180*Math.PI;
+			var a_i = a_i/180*Math.PI;
+			var a_i_1 = a_i_1/180*Math.PI; 
+			
+			var zyOfX = x_ji+T*Math.cos(a_i_1+180/180*Math.PI);
+			var zyOfY = y_ji+T*Math.sin(a_i_1+180/180*Math.PI);
+			console.log("ZY坐标为"+"("+zyOfX+","+zyOfY+")");
+
+			var yzOfX = x_ji+T*Math.cos(a_i);
+			var yzOfY = y_ji+T*Math.sin(a_i);
+			console.log("YZ坐标为"+"("+yzOfX+","+yzOfY+")");
+			return;
+		} 
+		//调用函数
+		coordinates1(15,15,90,90,10);
+
+		//已知x_zy,y_zy,R,A_i_1,L
+		function coordinates2(x_zy, y_zy, R, A_i_1, L){
+			var x = x_zy+2*R*(Math.sin(1/2*L/R))*(Math.cos(A_i_1))+(1/2*L/R);
+			var y = y_zy+2*R*(Math.sin(1/2*L/R))*(Math.sin(A_i_1))+(1/2*L/R)
+			// Math.round(x)  Math.round(y)
+			console.log("坐标为"+"("+(x)+","+(y)+")");
+		}
+
+		//调用函数
+		coordinates2(10,10,10,10,10);
+
+	</script>
+</body>
+</html>

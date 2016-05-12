@@ -6,12 +6,13 @@
 </head>
 <body>
 	<script type="text/javascript">
-		// var R,a;
+		// 题目一圆曲线
+		// 
 		function T(R,a){
 			var a = a/360*Math.PI;
 			return R*Math.sin(a);
 		}
-		//调用函数T,插入需要输入的变量
+		//调用函数T
 		console.log(T(10,180));	
 
 		function L(R,a){
@@ -31,8 +32,11 @@
 		function q(R,a){
 			return 2*T(R,a)-L(R,a);
 		}
-
+		//调用q
 		console.log(q(10,180));
+
+
+
 	</script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chapter4_2_3</title>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<form>
+		<input type="checkbox" value="1" name="check" checked="checked"/>
+		<input type="checkbox" value="2" name="check" />
+		<input type="checkbox" value="3" name="check" checked="checked"/>
+		<input type="button" value="你选中的个数" id="btn"/>
+	</form>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn").click(function(){
+				var items = $("input[name='check']:checked");
+				alert("选中的个数为"+items.length);
+			});
+		});
+	</script>
+</body>
+</html>

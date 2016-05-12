@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chapter2_4_2</title>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<table id="tb">
+	<tbody>
+		<tr><td>第一行</td><td>第一行</td></tr>
+		<tr><td>第二行</td><td>第二行</td></tr>
+		<tr><td>第三行</td><td>第三行</td></tr>
+		<tr><td>第四行</td><td>第四行</td></tr>
+		<tr><td>第五行</td><td>第五行</td></tr>
+		<tr><td>第六行</td><td>第六行</td></tr>
+	</tbody>
+	</table>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#tb tbody tr:even").css("backgroundColor","#888");
+	});
+	</script>
+</body>
+</html>

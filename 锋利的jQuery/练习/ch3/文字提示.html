@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字提示</title>
+	<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+	<style type="text/css">
+		body{
+			margin:0;
+			padding:40px;
+			background:#fff;
+			font:80% Arial, Helvetica, sans-serif;
+			color:#555;
+			line-height:180%;
+		}
+		p{
+			clear:both;
+			margin:0;
+			padding:.5em 0;
+		}
+		/* tooltip */
+		#tooltip{
+			position:absolute;
+			border:1px solid #333;
+			background:#f7f5d1;
+			padding:1px;
+			color:#333;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<p>
+	<a href="#" class="tooltip" title="这是我的超链接提示1.">提示1.</a>
+</p>
+<p>
+	<a href="#" class="tooltip" title="这是我的超链接提示2.">提示2.</a>
+</p>
+<p>
+	<a href="#" title="这是自带提示1.">自带提示1.</a>
+</p>
+<p>
+	<a href="#" title="这是自带提示2.">自带提示2.</a>
+</p>
+
+<script type="text/javascript">
+	var x = 10,
+		y = 20;
+	$("a.tooltip").mouseover(function(event) {
+		/* Act on the event */
+		console.log(this);
+		this.myTitle = this.title;
+		// console.log(myTitle);
+		this.title = "";
+
+		// var str = "<div>"+myTitle+"</div>";
+		var tooltip = "<div id='tooltip'>"+this.myTitle+"</div>";
+		$("body").append(tooltip);
+		$("#tooltip").css({
+			"top": (event.pageY+y)+"px",
+			"left": (event.pageX+x)+"px"
+		}).show("fast");
+	}).mouseout(function(event) {
+		/* Act on the event */
+		this.title = this.myTitle;
+		$("#tooltip").remove();
+	}).mousemove(function(event) {
+		/* Act on the event */
+		$("#tooltip").css({
+			"top": (event.pageY+y)+"px",
+			"left": (event.pageX+x)+"px"
+		});		
+	});
+
+</script>
+</body>
+</html>

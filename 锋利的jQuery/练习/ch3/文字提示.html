@@ -44,12 +44,15 @@
 </p>
 
 <script type="text/javascript">
-	var x = 10,
-		y = 20;
-	$("a.tooltip").mouseover(function(event) {
-		/* Act on the event */
-		console.log(this);
-		this.myTitle = this.title;
+	$(document).ready(function(){
+		//避免提示与鼠标太近
+		var x = 10,
+			y = 20;
+
+		$("a.tooltip").mouseover(function(event) {
+			/* Act on the event */
+			console.log(this);
+			this.myTitle = this.title;
 		// console.log(myTitle);
 		this.title = "";
 
@@ -71,6 +74,7 @@
 			"left": (event.pageX+x)+"px"
 		});		
 	});
+});
 
 </script>
 </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第一个Ajax例子</title>
+</head>
+<body>
+	<input type="button" name="btn" value="Ajax提交" onclick="Ajax()" />
+	<div id="resText"></div>
+	<script type="text/javascript">
+		function Ajax(){
+			//声明一个空对象装入XMLHttpRequest
+			var xmlHttpReq = null;
+			//给xmlHttpReq赋值
+			if (window.ActiveObject) { 		// IE5 IE6 
+				xmlHttpReq = new ActiveObject("Microsoft.XMLHTTP");
+			}else if(window.XMLHttpRequest){	//除IE5 IE6以外
+				xmlHttpReq = new XMLHttpRequest();
+			}
+			//初始化xmlHttpReq对象
+			xmlHttpReq.open("GET","test.php",true);
+			//注册回调事件处理器
+			xmlHttpReq.onreadystatechange = RequestCallBack;
+			//使用GET方法提交，所以可以使用null作为参数调用
+			xmlHttpReq.send(null);		
+
+			function RequestCallBack(){
+			if (xmlHttpReq.readyState == 4) { //一旦readystate值改变，将会调用概数
+				if (xmlHttpReq.status == 200) {
+					// 将xmlHttpReq.responseText 的值赋值id 为resText的元素
+					document.getElementById('resText').innerHTML = xmlHttpReq.responseText;
+				}
+			}
+			}	
+		}
+
+		
+	</script>
+</body>
+</html>

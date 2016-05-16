@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo2</title>
+	<style type="text/css">
+		* { margin:0; padding:0;}
+		body { font-size:12px;}
+		.comment { margin-top:10px; padding:10px; border:1px solid #ccc;background:#DDD;}
+		.comment h6 { font-weight:700; font-size:14px;}
+		.para { margin-top:5px; text-indent:2em;background:#DDD;}
+	</style>
+	<script type="text/javascript" src="../jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<input id="send" type="button" name="btn" value="Ajax获取" />
+	<div class="comment">已有评论</div>
+	<div id="resText"></div>
+	<script type="text/javascript">
+		$(function(){
+			$("#send").click(function(){
+				$("#resText").load("test.html",function(responseText, textStatus, XMLHttpRequest){
+					console.log($(this).html());
+					console.log(responseText);
+					console.log(textStatus);
+					console.log(XMLHttpRequest);
+				});
+			});
+		});
+	</script>
+</body>
+</html>

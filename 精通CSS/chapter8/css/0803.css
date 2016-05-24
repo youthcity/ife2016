@@ -1,0 +1,21 @@
+.content {
+	width: 920px;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #fef;
+}
+
+.primary {
+	width: 650px;
+	padding-right: 20px;
+	float: right;
+	display: inline;  /* 防止IE的bug*/
+	background-color: #f2f;
+}
+
+.secondary {
+	width: 230px;
+	float: left;
+	display: inline;
+	background-color: #5ff;
+}

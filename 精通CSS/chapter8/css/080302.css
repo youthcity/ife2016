@@ -1,0 +1,30 @@
+.content {
+	width: 920px;
+	margin: 0 auto;
+	background-color: #fef;
+}
+
+.content .primary {
+	width: 670px;
+	float: right;
+	display: inline;
+}
+
+.content .secondary {
+	width: 230px;
+	float: left;
+	display: inline;
+}
+
+.content .primary .primary {
+	width: 400px;
+	float: left;
+	display: inline;
+}
+
+.content .primary .secondary {
+	width: 230px;
+	padding-right: 20px;
+	float: right;
+	display: inline;
+}

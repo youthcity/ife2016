@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3.1.2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var Type = {};
+		// console.log( ['String', 'Array', 'Number'][0]);
+		// ['String', 'Array', 'Number'][0] 可以看作 Array[0]
+		for (var i = 0, type; type = ['String', 'Array', 'Number'][i++];){
+			(function(type){
+				Type['is'+type] = function(obj){
+					// console.log(Object.prototype.toString.call(obj));
+					return Object.prototype.toString.call(obj) === '[object '+type+']';
+				}
+			})(type);
+		};
+
+		console.log(Type.isArray([]));
+		console.log(Type.isString("str"));
+
+	</script>
+</body>
+</html>

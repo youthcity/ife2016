@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style>
+            .oli{
+                width: 300px;
+                height: 35px;
+                color: #FFFFFF;
+                background-color: #004488;
+                margin-bottom: 1px;
+                padding-left: 20px;
+                line-height: 35px;
+            }
+            
+            a:link{
+                color: #FFFFFF;
+            }
+            a:hover{
+                color: #ff0099;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                 var oul_b1 = document.getElementById('oul_1');
+                 var oBat_a2 = document.getElementById('bat_a2');
+                 oBat_a2.onclick = function(){
+                     var oli_b1 = document.createElement('li');
+                     var text_b2 = document.getElementById('text_a2');
+                     oli_b1.innerHTML = text_b2.value + "&nbsp;&nbsp;&nbsp;<a href='javascript:;'>删除</a>";
+                     oul_b1.appendChild(oli_b1);
+                     //下面的代码是给添加的li加一个class样式
+                     var calss_li = oul_b1.getElementsByTagName('li');
+                     for(var i=0;i<calss_li.length;i++){
+                         //alert(calss_li[1].innerHTML);
+                         calss_li[i].className = 'oli';
+                     };
+                     //
+                     
+                 //下面是删除添加的li
+                 var del_li = document.getElementsByTagName('a');
+                 alert('dsaf');
+                 for(var j=0;j<del_li.length;j++){
+                     //alert(del_li.innerHTML);
+                     del_li[j].onclick = function(){
+                         alert('ada');//测试
+                         oul_b1.removeChild(this.parentNode); //删除oul_b1的子节点
+                     }
+                 };
+                 
+                 };
+                 //
+                 
+                 
+             }
+        </script>
+    </head>
+
+    <body>
+        <input type="text" value="" id="text_a2" />
+        <input type="button" value="添加LI" id="bat_a2" />
+        <ul id="oul_1">
+
+        </ul>
+    </body>
+
+</html>

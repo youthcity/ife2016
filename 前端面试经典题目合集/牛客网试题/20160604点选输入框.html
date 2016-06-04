@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击选项输入</title>
+	<style type="text/css">
+		ul {
+			list-style: none;
+		}
+		.list_input {
+			display: inline-block;
+			padding:0.2em 0.8em;
+			background-color: #6fb3e0;
+			border-color:#6fb3e0;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+	<ul id="list_input">
+      <li class="list_input btn btn-info btn-sm" style="display: none;">2.8L</li>
+          <li class="list_input btn btn-info btn-sm">3.0L</li>
+          <li class="list_input btn btn-info btn-sm">3.0L</li>
+          <li class="list_input btn btn-info btn-sm">15</li>
+      </ul>
+
+  <input type="text" name="VehicleInsuranceInsuranceType" id="InsuranceType">
+
+<script type="text/javascript">
+  $(function(){
+    $list = $("#list_input li");
+    $arr = [];
+    $input_list = $("#InsuranceType");
+    $list.each(function(){
+
+      // $val = $(this).text();
+      // console.log($(this).text());
+      $(this).click(function(){
+        $val = $(this).text();
+        console.log($val);
+        $arr.push($val);
+        $(this).hide();
+        console.log($arr);
+
+        $input_list.val("");
+        $input_list.val($arr.join("、"));
+
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

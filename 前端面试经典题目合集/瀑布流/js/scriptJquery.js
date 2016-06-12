@@ -5,8 +5,15 @@ $(document).ready(function(){
 		$(window).on('scroll', function(){
 			if(checkScrollSlide()){
 				$.each(dataInt.data, function(key,value){
-					console.log(value);
+					// console.log(value);
+				var oBox = 	$('<div>').addClass('box').appendTo($('#main'));
+				// console.log(oBox);
+				var oPic = $('<div>').addClass('pic').appendTo(oBox);
+				var oImg =  $('<img>').attr('src', 'img/'+value.src);
+				// console.log(value.src);
+				oImg.appendTo(oPic);
 				});
+				waterfall();
 			}
 	});
 	});

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript算法练习：重复字符串</title>
+</head>
+<body>
+	<p>这里所说的重复字符串是指对所给的字符串根据第一个数字参数重复次数。简单点说，就是创建一个repeat()函数，并且给这个函数传递两个参数，第一个参数是一个字符串str，而第二个参数是一个数字num。执行函数repeat(str, num)之后，字符串str就会重复，而且重复的次数由num来确定。</p>
+	<ul>
+		<Li>repeatStringNumTimes("*", 3)返回***</Li>
+		<Li>repeatStringNumTimes("abc", 3)返回abcabcabc</Li>
+		<Li>repeatStringNumTimes("abc", 4)返回abcabcabcabc</Li>
+		<Li>repeatStringNumTimes("abc", -2)返回</Li>
+	</ul>
+	<a href="http://mp.weixin.qq.com/s?__biz=MjM5NzE0MjQ2Mw==&mid=2652491647&idx=1&sn=b6511449ac4438fb3436ae78025db30d&scene=19#wechat_redirect">来源</a>
+	<script type="text/javascript">
+		//方法一
+		//通过循环累加字符串
+		// function repeat(str, num){
+		// 	var result = "";
+		// 	while(num > 0){
+		// 		result += str;
+		// 		num--;
+		// 	}
+		// 	return result;
+		// }
+
+		//方法二
+		//通过数组 使用join方法
+		// function repeat(str, num){
+		// 	var result = [];
+		// 	while(num >0){
+		// 		result.push(str);
+		// 		num--;
+		// 	}
+		// 	return result.join("");
+		// }
+
+		//方法三
+		// function repeat(str,num){
+		// 	return (num<0)? "" :new Array(num+1).join(str);
+		// }
+
+		//另一种写法
+		// function repeat(str,num){
+		// 	return Array.apply(null, {length:num+1}).join(str);
+		// }
+
+		//方法四 
+		//使用ES6中的String.prototype.repeat()方法直接实现重复字符串的连接
+		// function repeat(str, num){
+		// 	if (num > 0) {
+		// 		 return str.repeat(num);
+		// 	}else{
+		// 		return "";
+		// 	}
+		// }
+
+		//另一种写法
+		// function repeat(str, num){
+		// 	if (num <= 0) {
+		// 		return str.repeat(0);
+		// 	}else {
+		// 		return str.repeat(num);
+		// 	}
+		// }
+
+		//另一种写法
+		//递归
+		// function repeat(str,num){
+		// 	if (num <=0) return "";
+		// 	if (num === 1) {
+		// 		return str;
+		// 	}else {
+		// 		return str + repeat(str, num-1);
+		// 	}
+		// }
+
+		//方法五
+		//无符号右移赋值操作 (>>>=)
+		// 对变量值根据表达式值所规定的位数进行无符号右移，并将结果赋给该变量。
+		// 使用 >>>= 运算符和使用下面的语句是等效的： 
+		// result = result >>> expression
+		// >>>= 运算符把 result 的所有位向右移 expression 
+		// 指定的位数。右移后左边空出的位用零来填充。向右移出的位被丢弃。
+		// function repeat(str, num){
+		// 	 num = Number(num);
+		//      var result = '';
+	 	//         while (true) {
+		//            if (num & 1) { 
+		// 			 result += str;
+	 	//   	}
+		//         num >>>= 1; // (2)
+		//         if (num <= 0) {break;}
+		//         str += str;
+		//     }    
+		//     return result;
+		// } 
+
+		//目瞪口呆的方法。。 向左位移
+		// function repeat(str, num) {
+		// 	console.log((1 << (num - 1)).toString(2));
+	 	// 	 return (1 << (num - 1)).toString(2).replace(/./g, str);
+		// }
+
+		console.log(repeat("abc",3));	
+		console.log(repeat("abc",0));
+	</script>
+</body>
+</html>

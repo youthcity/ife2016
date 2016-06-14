@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>JavaScript算法练习：字尾确认</title>
+	<title>JavaScript算法练习：字尾确认  Confirm The Ending</title>
 </head>
 <body>
+	<p>字尾确认指的是对所给的字符串（第一个参数）确认是否是以第二个参数结尾，如果是则返回true，否则返回false。也就是说，今天要做的任务是创建一个end()函数，并且给这个函数传入两个参数str和target。如果target和str末尾相同，则返回true，反之则返回false。</p>
+	<script type="text/javascript">
+		// my answer
+		// function end(str , target){
+		// 	// console.log((-(target.length)));
+		// 	var len = target.length;
+		// 	// str.substr((-len),len.length);
+		// 	return (str.substr((-len),len.length) === target);
+		// }
+
+		//简化版
+		// function end(str , target){
+		// 	// var endingPart =str.substr(-(target.length));
+		// 	return str.substr(-(target.length)) === target;
+		// }
+
+
+		//可以把str.substr(-(target.length))换成str.substr(str.length - target.length)或者str.substr(str.length - target.length, target.length)
+
+		//防止target为空		
+		// function end(str , target){
+		// 	return target.length > 0 && str.substr(str.length-target.length); 
+		// }
+		
+		//ES6方法 endsWith()
+		// function end(str ,target){
+		// 	return str.endsWith(target);
+		// }
+
+		//lastIndexOf方法
+		//有问题？
+		// function end(str, target){
+ 		// 	  var endingPart = str.lastIndexOf(target);
+	 	//    return endingPart !== -1 ;
+		// }
+		
+		//slice()方法
+		function end(str, target){
+			var endingPart = str.slice(-target.length);
+			return endingPart === target;
+		} 
 	
+
+		console.log(end("Bastian","sa"));
+		console.log(end("Connor", "r"));
+		
+	</script>
 </body>
 </html>

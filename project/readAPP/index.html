@@ -367,7 +367,11 @@
 						$.get('./data/chapter.json', function(data) {
 							//获取章节信息后的回调
 							// console.log(data.chapters[0]);
-							Chapter_id = data.chapters[1].chapter_id;
+							Chapter_id = Util.StorageGetter('last_chapter_id');
+							if(!Chapter_id) {
+								Chapter_id = data.chapters[1].chapter_id;
+							}
+							// Chapter_id = data.chapters[1].chapter_id;
 							ChapterTotal = data.chapters.length;
 							callback && callback();
 						},'json');
@@ -389,6 +393,7 @@
 						}
 						Chapter_id =Chapter_id - 1;
 						getCurChapterContent(Chapter_id, UIcallback);
+						Util.StorageSetter("last_chapter_id",Chapter_id);
 					};
 					var nextChapter = function(UIcallback){
 						Chapter_id = parseInt(Chapter_id);
@@ -397,6 +402,7 @@
 						}
 						Chapter_id = Chapter_id + 1;
 						getCurChapterContent(Chapter_id, UIcallback);
+						Util.StorageSetter("last_chapter_id",Chapter_id);
 					};
 					return {
 						init:init,

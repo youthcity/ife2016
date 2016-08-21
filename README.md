@@ -6,23 +6,6 @@
 - [Web 阅读器](http://115.159.210.172:8080/readAPP/) <span style="color:red">建议开启移动设备调试模式</span>
 - [仿QQ应用](http://115.159.210.172:8080/ionic_qq/www/#/app/messages) <span style="color:red">建议开启移动设备调试模式</span>
 
-###learn CSS3
-- [绿色小圆点闪烁]()
-- [音乐波纹]()
-- [交替闪烁]()
-- [环形加载_月牙]()
-- [环形加载]()
-- [折角效果——三角形应用]()
-- [椭圆运动]()
-- [单摆运动]()
-- [照片悬停效果]()
-- [蒙层效果]()
-- [径向菜单]()
-
-###我的简历(未完成)
-- [web简历]()
-
-
 ###一些demo：
 - [类海报设计网页](http://youthcity.github.io/ife2016/ife01/task_06.html)
 - [模仿网页首页](http://youthcity.github.io/ife2016/ife01/task_07.html)

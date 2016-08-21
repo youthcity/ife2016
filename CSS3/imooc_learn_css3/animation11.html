@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation4</title>
+	<style type="text/css">
+	body {
+	background-color: #000;
+	text-align: center;
+	}
+	h1 {
+		font-family: "Microsoft YaHei";
+		color: #fff;
+	}
+	.spinner {
+		margin: 50px auto;
+		width: 250px;
+		height: 250px;
+		/*月牙型*/
+		/*border-left: 20px solid #fff;*/
+		/*圆形加载..*/
+		border: 1.1em solid rgba(255,255,255,0.2);
+		border-left-color: #fff;
+		border-radius: 50%;
+		-webkit-animation: mydong 1.2s infinite linear;
+	}
+	
+	@-webkit-keyframes mydong {
+		from {
+			-webkit-transform: rotate(0deg);
+		}
+		to {
+			-webkit-transform: rotate(360deg);
+		}
+	}
+	</style>
+</head>
+<body>
+	<h1>环形加载</h1>
+	<div class="spinner"></div>
+</body>
+</html>

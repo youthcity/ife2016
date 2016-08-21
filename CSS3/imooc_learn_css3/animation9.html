@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>弧形运动效果</title>
+	<style type="text/css">
+		body{
+		  margin:0;
+		  background:#111;
+		  text-align:center;
+		}
+		h1 {
+			color: #fff;
+		}
+		.stage{
+		  width:120px;
+		  height:auto;
+		  margin:0 auto;
+		  position:relative;
+		  -webkit-transform-origin:center top;
+		  -webkit-transform:rotate(-30deg);
+		  -webkit-animation:sway 2.2s infinite alternate ease-in-out;
+		}
+		.watch{
+		  width:100%;
+		  height:auto;
+		}
+		.seconds{
+		  position:absolute;
+		  width:8%;
+		  height:auto;
+		  bottom:11.5%;
+		  left:45.5%;
+		  -webkit-transform-origin:center 72.4%;
+		  -webkit-animation:second 60s infinite linear;
+		}
+		@-webkit-keyframes second{
+		  to{
+		    -webkit-transform:rotate(355deg);
+		  }
+		}
+		@-webkit-keyframes sway{
+		  to{
+		   -webkit-transform:rotate(30deg);
+		  }
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="stage">
+	  <img src="img/danbai.png" alt="钟表" class="watch"/>
+	  <img src="img/zhizhen.png" alt="秒针" class="seconds">
+	</div>
+	<h1>单摆运动</h1>
+</body>
+</html>

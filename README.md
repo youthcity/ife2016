@@ -7,20 +7,20 @@
 - [仿QQ应用](http://115.159.210.172:8080/ionic_qq/www/#/app/messages) <span style="color:red">建议开启移动设备调试模式</span>
 
 ###learn CSS3
-- [绿色小圆点闪烁]()
-- [音乐波纹]()
-- [交替闪烁]()
-- [环形加载_月牙]()
-- [环形加载]()
-- [折角效果——三角形应用]()
-- [椭圆运动]()
-- [单摆运动]()
-- [照片悬停效果]()
-- [蒙层效果]()
-- [径向菜单]()
+- [绿色小圆点闪烁](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation1.html)
+- [音乐波纹](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation2.html)
+- [交替闪烁](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation3.html)
+- [环形加载_月牙](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation4.html)
+- [环形加载](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation11.html)
+- [折角效果——三角形应用](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation6.html)
+- [椭圆运动](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation8.html)
+- [单摆运动](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation9.html)
+- [照片悬停效果](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation10.html)
+- [蒙层效果](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/mask1.html)
+- [径向菜单](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/nav1.html)
 
 ###我的简历(未完成)
-- [web简历]()
+- [web简历](http://youthcity.github.io/ife2016/CSS3/myResume/index.html)
 
 
 ###一些demo：

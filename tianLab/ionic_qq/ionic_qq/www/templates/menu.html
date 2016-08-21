@@ -1,0 +1,85 @@
+<ion-side-menus enable-menu-with-back-views="false">
+<!-- 中心主要内容 -->
+  <ion-side-menu-content>
+      <!-- header -->
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+      <div class="tabs tabs-icon-top tabs-background-positive " 
+      ng-if="$root.showFooter">
+        <a class="tab-item" href="#/app/message">
+          <i class="icon ion-ios-chatbubble " ></i>
+          消息
+        </a>
+        <a class="tab-item" href="#/app/linkman">
+          <i class="icon ion-person"></i>
+          联系人
+        </a>
+        <a class="tab-item" href="#/app/dynamics">
+          <i class="icon ion-star"></i>
+          动态
+        </a>
+      </div>
+<!--     <div ui-view="nav_bar"></div>
+    <div ui-view="nav_content"></div>
+    <div ui-view="nav_footer"></div> -->
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+  <!-- 侧边栏头部 -->
+    <ion-header-bar class="item item-avatar bar-light"  >
+        <img ng-src="./img/usr-ii.png">
+        <h2 >写，乐</h2>
+        <p><span style="font-size: 1.5em;font-weight: bold;">“ </span>奇变偶不变，符号看象限</p>
+    </ion-header-bar>
+    <ion-content >
+      <ion-list>
+        <br>
+        <ion-item menu-close class="item item-icon-left" ng-click="login()">
+        <i class="icon ion-social-angular-outline"></i>
+          开通会员
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/search">
+         <i class="icon ion-social-usd-outline"></i>
+          QQ钱包
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/browse">
+          <i class="icon ion-social-buffer-outline"></i>
+          个性装扮
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/playlists">
+          <i class="icon ion-ios-bookmarks-outline"></i>
+          我的收藏
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/my_album">
+          <i class="icon ion-ios-photos-outline"></i>
+          我的相册
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/playlists">
+          <i class="icon  ion-ios-folder-outline"></i>
+          我的文件
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/businessCard">
+          <i class="icon ion-ios-albums-outline "></i>
+          我的名片夹
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+<!-- footer -->
+    <ion-footer-bar align-title="left" class="bar-assertive">
+      <a class="button button-icon icon ion-ios-gear-outline">设置</a>
+      <button class="button button-clear icon-left icon ion-ios-sunny-outline">白天</button>
+      <!-- <a class="button button-icon icon ion-ios-sunny-outline " >白天</a> -->
+      <a class="button button-icon icon ion-ios-partlysunny-outline" >苏州 37℃</a>
+    </ion-footer-bar>
+  </ion-side-menu>
+</ion-side-menus>

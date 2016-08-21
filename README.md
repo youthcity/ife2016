@@ -1,5 +1,10 @@
-# 关于这个仓库
-这里是用来存放我在做百度前端任务的练习代码和《JavaScript高级程序设计》书例代码，和JavaScript编程练习代码。
+# 前端杂货铺
+那键盘下的代码啊，是我逝去的青春。。
+
+
+###Web App
+- [Web 阅读器](http://115.159.210.172:8080/readAPP/) <span style="color:red">建议开启移动设备调试模式</span>
+- [仿QQ应用](http://115.159.210.172:8080/ionic_qq/www/#/app/messages) <span style="color:red">建议开启移动设备调试模式</span>
 
 ###一些demo：
 - [类海报设计网页](http://youthcity.github.io/ife2016/ife01/task_06.html)

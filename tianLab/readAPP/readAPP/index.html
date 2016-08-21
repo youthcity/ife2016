@@ -286,6 +286,7 @@
 
 		<script>
 			(function(){
+				'use strict';
 				var Util =(function(){
 					var prefix ='html5_reader';
 					var StorageGetter = function(key){
@@ -345,8 +346,12 @@
 				function main(){
 					readerModel =ReaderModel();
 					readerUI = ReaderBaseFrame(RootContainer);
-					readerModel.init(function(data){
+					// readerModel.init(function(data){
+					// 	readerUI(data);
+					// });
+					readerModel.initPromise().then(function(data){
 						readerUI(data);
+
 					});
 					EventHandler();
 				}
@@ -356,14 +361,30 @@
 					var Chapter_id;
 					var ChapterTotal;
 					var init = function(UIcallback){
-						getFictionInfo(function(){
-							getCurChapterContent(Chapter_id,function(data){
-								//todo..
-								UIcallback && UIcallback(data);
+						// getFictionInfo(function(){
+						// 	getCurChapterContent(Chapter_id,function(data){
+						// 		//todo..
+						// 		UIcallback && UIcallback(data);
+						// 	});
+						// });
+						getFictionInfoPromise().then(function(d){
+							return getCurChapterContentPromise();
+						}).then(function(data){
+							UIcallback && UIcallback(data);
+						});
+					};
+					var initPromise = function(){
+						return new Promise(function(resolve, reject){
+							getFictionInfoPromise().then(function(d){
+								return getCurChapterContentPromise();
+							}).then(function(data){
+								// UIcallback && UIcallback(data);
+								resolve(data);
 							});
 						});
 					};
-					var getFictionInfo = function(callback){
+
+				/*	var getFictionInfo = function(callback){
 						$.get('./data/chapter.json', function(data) {
 							//获取章节信息后的回调
 							// console.log(data.chapters[0]);
@@ -375,8 +396,27 @@
 							ChapterTotal = data.chapters.length;
 							callback && callback();
 						},'json');
+					}; */
+					var getFictionInfoPromise = function(){
+						return new Promise(function(resolve, reject){
+							$.get('./data/chapter.json', function(data) {
+							//获取章节信息后的回调
+							if(data.result == 0){
+								Chapter_id = Util.StorageGetter('last_chapter_id');
+								if(!Chapter_id) {
+									Chapter_id = data.chapters[1].chapter_id;
+								}
+								// Chapter_id = data.chapters[1].chapter_id;
+								ChapterTotal = data.chapters.length;
+								resolve();
+							}else {
+								reject();
+							}
+						},'json');
+						});
 					};
-					var getCurChapterContent = function(chapter_id,callback){
+
+				/*	var getCurChapterContent = function(chapter_id,callback){
 						$.get('./data/data'+chapter_id+'.json', function(data) {
 							if (data.result == 0 ) {
 								var url = data.jsonp;
@@ -385,6 +425,21 @@
 								});
 							}
 						},'json');
+					}; */
+					var getCurChapterContentPromise = function(){
+						return new Promise(function(resolve, reject){
+							$.get('./data/data'+Chapter_id+'.json', function(data) {
+								if (data.result == 0 ) {
+									var url = data.jsonp;
+									Util.getBSONP(url, function(data){
+										// callback && callback(data);
+										resolve(data);
+									});
+								} else {
+									reject({msg:"fail"});
+								}
+							},'json');
+						});
 					};
 					var prevChapter = function(UIcallback){
 						Chapter_id = parseInt(Chapter_id);
@@ -392,7 +447,11 @@
 							return;
 						}
 						Chapter_id =Chapter_id - 1;
-						getCurChapterContent(Chapter_id, UIcallback);
+						// getCurChapterContent(Chapter_id, UIcallback);
+						getCurChapterContentPromise().then(function(data){
+							UIcallback(data);
+							document.body.scrollTop = 0;
+						});
 						Util.StorageSetter("last_chapter_id",Chapter_id);
 					};
 					var nextChapter = function(UIcallback){
@@ -401,13 +460,18 @@
 							return;
 						}
 						Chapter_id = Chapter_id + 1;
-						getCurChapterContent(Chapter_id, UIcallback);
+						// getCurChapterContent(Chapter_id, UIcallback);
+						getCurChapterContentPromise().then(function(data){
+							UIcallback(data);
+							document.body.scrollTop = 0;
+						});
 						Util.StorageSetter("last_chapter_id",Chapter_id);
 					};
 					return {
 						init:init,
 						prevChapter:prevChapter,
 						nextChapter:nextChapter,
+						initPromise:initPromise,
 					};
 				}
 

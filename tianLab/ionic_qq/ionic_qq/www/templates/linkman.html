@@ -1,0 +1,177 @@
+<ion-view view-title="联系人" hide-back-button="true">
+
+	<ion-content>
+	<!-- 刷新 -->
+		<ion-refresher
+			pulling-text="下拉刷新..."
+			refreshing-text="正在刷新..."
+			on-refresh="doRefresh()">
+		</ion-refresher>
+	<!-- 搜索 -->
+		<label class="item item-input">
+		<i class="icon ion-search placeholder-icon"></i>
+		<input type="search" placeholder="Search" ng-model="search_name">
+		</label>
+	<!-- 中间button -->
+		<div class="tabs tabs-icon-top light-bg" style="background-size: 100% 0px;position: relative;">
+			<a class="tab-item">
+				<i class="icon ion-person balanced" ></i>
+				新朋友
+			</a>
+			<a class="tab-item" >
+				<i class="icon ion-person-stalker calm"></i>
+				群聊
+			</a>
+			<a class="tab-item">
+				<i class="icon ion-radio-waves energized"></i>
+				公众号
+			</a>
+		</div>
+<!-- 		<div class="row">
+			 实现方式二
+			<div class="button-bar">
+				<a class="button " href="#">
+					<i class="icon ion-home button-large"></i>
+					<p>新朋友</p>
+				</a>
+				<a class="button" href="#">
+					<i class="icon ion-home button-large"></i>
+					<p>群聊</p>
+				</a>
+				<a class="button" href="#">
+					<i class="icon ion-home button-large"></i>
+					<p>公众号</p>
+				</a>
+			</div>
+		</div>   -->
+		<!-- List表1 -->
+		<div class="list">
+			<div class="item item-divider bar-stable">
+			</div>
+			  <a ng-click="toggle_1 = !toggle_1" class="item item-icon-left item-icon-right" href="javascript:;">
+			    <i class="icon " style="font-size:1.5em;color:#bbb;" ng-class="{true:'ion-arrow-down-b',false:'ion-arrow-right-b'}[toggle_1]" style="color:#bbb;"></i>
+			    特别关心
+			    <i class="icon "><span style=" color: #666;font-size: 14px;">10/13</span></i>
+			  </a>
+			<div ng-show="toggle_1">
+				<a class="item item-avatar" href="#">
+				<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+			</div>
+			 <a ng-click="toggle_2 = !toggle_2" class="item item-icon-left item-icon-right" href="javascript:;">
+			    <i class="icon " style="font-size:1.5em;color:#bbb;" ng-class="{true:'ion-arrow-down-b',false:'ion-arrow-right-b'}[toggle_2]" style="color:#bbb;"></i>
+			    常用群聊
+			    <i class="icon "><span style=" color: #666;font-size: 14px;">3</span></i>
+			  </a>
+  			<div ng-show="toggle_2">
+				<a class="item item-avatar" href="#">
+				<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+			</div>
+			<div class="item item-divider bar-stable">
+			</div>
+			<!-- 我的好友 -->
+			<a ng-click="toggle_3 = !toggle_3" class="item item-icon-left item-icon-right" href="javascript:;">
+				<i class="icon " style="font-size:1.5em;color:#bbb;" ng-class="{true:'ion-arrow-down-b',false:'ion-arrow-right-b'}[toggle_3]" style="color:#bbb;"></i>
+				我的好友
+				<i class="icon "><span style=" color: #666;font-size: 14px;">3/3</span></i>
+			</a>
+  			<div ng-show="toggle_3">
+				<a class="item item-avatar" href="#">
+				<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+			</div>
+			<div class="item item-divider bar-stable">
+			</div>
+			<!-- 手机通讯录、我的设备 -->
+			<a ng-click="toggle_4 = !toggle_4" class="item item-icon-left item-icon-right" href="javascript:;">
+				<i class="icon " style="font-size:1.5em;color:#bbb;" ng-class="{true:'ion-arrow-down-b',false:'ion-arrow-right-b'}[toggle_4]" style="color:#bbb;"></i>
+				手机通讯录
+				<i class="icon "><span style=" color: #666;font-size: 14px;">3/3</span></i>
+			</a>
+  			<div ng-show="toggle_4">
+				<a class="item item-avatar" href="#">
+				<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+			</div>
+			<a ng-click="toggle_5 = !toggle_5" class="item item-icon-left item-icon-right" href="javascript:;">
+				<i class="icon " style="font-size:1.5em;color:#bbb;" ng-class="{true:'ion-arrow-down-b',false:'ion-arrow-right-b'}[toggle_5]" style="color:#bbb;"></i>
+				我的好友
+				<i class="icon "><span style=" color: #666;font-size: 14px;">3/3</span></i>
+			</a>
+  			<div ng-show="toggle_5">
+				<a class="item item-avatar" href="#">
+				<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+				<a class="item item-avatar" href="#">
+					<img src="./img/user.jpg">
+					<h2>Venkman</h2>
+					<p>Back off, man. I'm a scientist.</p>
+				</a>
+			</div>
+
+
+		</div>
+		<!-- List表2 -->
+	</ion-content>
+</ion-view>

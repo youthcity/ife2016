@@ -1,0 +1,31 @@
+
+<ion-view view-title="{{chatName}}">
+	<ion-content>
+		<div class="list">
+			<div ng-repeat="item in items" ng-class="item.type?'item-avatar-right':'item-avatar-left'" class="item" style="border:none;">
+				<img ng-src={{item.imgUrl}}>
+				<div class="bubble item-text-wrap" ng-class="item.type?'float_right':'float_left'">
+					{{item.text}}
+					<div ng-class="item.type?'cornerR':'corner'"></div>
+					<span>{{item.time}}</span>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+	<ion-footer-bar align-title="left" keyboard-attach class="bar-assertive">
+	<!-- 	<div class="buttons">
+			<button class="button">Left Button</button>
+		</div>
+		<h1 class="title">Title!</h1>
+		<div class="buttons" ng-click="doSomething()">
+			<button class="button">Right Button</button>
+		</div> -->
+
+		<label class="item-input-wrapper">
+		<input type="text" ng-model="text" class="item-text-wrap"   style="width: 100%;" autofocus>
+		</label>
+		<button class="button button-small" ng-click="sendMessage()">
+			发送
+		</button>
+	</ion-footer-bar>
+</ion-view>

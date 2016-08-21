@@ -1,0 +1,49 @@
+/* Empty. Add your own CSS if you like */
+/*chat.html 文字框*/
+.bubble {
+    background: #f0f4f7;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 13px;
+    border-radius: 5px 5px 5px 0px;
+    color: #8495a3;
+    position: relative;
+    float: left;
+}
+
+.bubble .corner {
+    background: url("../img/bubble-corner.png") 0 0 no-repeat;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    left: -5px;
+    bottom: 0;
+}
+
+.bubble .cornerR {
+	    position: absolute;
+    width: 7px;
+    height: 7px;
+    bottom: 0;
+    background: url("../img/bubble-cornerR.png") 0 0 no-repeat;
+    left: auto;
+    right: -5px;
+}
+
+.bubble span {
+    color: #aab8c2;
+    font-size: 11px;
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+}
+
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+}
+
+/**/

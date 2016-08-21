@@ -1,0 +1,58 @@
+[
+    {
+      "id":0,
+      "name": "Connor Hartigan",
+      "text": "Learn how to add a basic list to an app",
+      "imgUrl":"./img/12.jpg",
+      "num":1
+     },
+   {
+      "id":1,
+      "name": "acob Lennon",
+      "text": "Add a refresher when pulling down on a list",
+      "imgUrl":"./img/11.jpg",
+      "num":2
+     },
+   {
+      "id":2,
+      "name": "Didier Mailly",
+      "text": "Understand how to delete items from a list",
+      "imgUrl":"./img/10.jpg",
+      "num":3
+     },
+   {
+      "id":3,
+      "name": "Miguel Cunha Ferreira",
+      "text": "Add the ability to reorder a list",
+      "imgUrl":"./img/09.jpg",
+      "num":4
+     },
+   {
+      "id":4,
+      "name": "Eric Yuriev",
+      "text": "Modify a list to show options when swiping on an item",
+      "imgUrl":"./img/08.jpg",
+      "num":5
+     },
+   {
+      "id":5,
+      "name": "Theodore Clark",
+      "text": "Infinite scroll a list by adding a spinner that shows while loading more data",
+      "imgUrl":"./img/07.jpg",
+      "num":6
+     },
+   {
+      "id":6,
+      "name": "Youth City",
+      "text": "O(∩_∩)O~",
+      "imgUrl":"./img/06.gif",
+      "num":7
+     },
+   {
+      "id":7,
+      "name": "Uhno",
+      "text": "Collection Repeat List",
+      "imgUrl":"./img/05.jpg",
+      "num":8
+     }
+]

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mask遮罩</title>
+	<style type="text/css">
+	body {
+		font-size: 14px;
+		font-family: "Microsoft YaHei"
+	}
+	h1 {
+		text-align: center;
+	}
+	.container {
+		width: 500px;
+		height: 500px;
+		margin: 50px auto;
+		text-align:center;
+	}
+	.container button {
+		width: 80px;
+		height: 80px;
+		background-color: #893846;
+		color: #fff;
+	}
+
+	#mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #000;
+		opacity: .75;
+		filter: alpha(opacity=78);
+		height: 2000px;
+		width: 100%;
+		z-index: 1000;
+	}
+	#login {
+		/*background-size: cover;*/
+		position: fixed;
+/*		left: 40%;
+		top: 30%;*/
+		z-index: 1001;
+	}
+	.loginCon {
+		width: 600px;
+		height: 400px;
+		background: url(img/earth.jpg) no-repeat;
+		background-size: contain;
+	}
+	#loginCanel {
+		position: absolute;
+		width: 45px;
+		height: 45px;
+		cursor: pointer;
+		background: url(img/ionic.png) no-repeat;
+		background-size: contain;
+		right: 5px;
+		top: 5px;
+	}
+	</style>
+</head>
+<body>
+	<h1>蒙层效果</h1>
+	<div class="container">
+		<button id="btn">点击我</button>
+	</div>
+	<!-- <div class="mask"></div>
+	<div class="login">
+		<div class="loginCon"><div id="loginCanel"></div></div>
+	</div> -->
+	<script type="text/javascript">
+		(function(){
+			window.onload=function(){
+				var btn = document.getElementById('btn');
+				btn.onclick = function(){
+					openNew();
+					return false;
+				};
+			};
+
+			function openNew(){
+				//获取页面高度和宽度
+				var sWidth = document.body.scrollWidth;
+				var sHeight = document.body.scrollHeight;
+
+				//获取可视区域高度和宽度
+				var cHeight = document.documentElement.clientHeight;
+
+				var oMask = document.createElement('div');
+					oMask.id = "mask";
+					oMask.style.height = sHeight;
+					oMask.style.width = sWidth;
+					document.body.appendChild(oMask);
+				var oLogin = document.createElement('div');
+					oLogin.id = "login";
+					oLogin.innerHTML = "<div class='loginCon'><div id='loginCanel'></div></div>";
+					document.body.appendChild(oLogin);
+
+				//获取登录窗的宽和高
+				var dHeight = oLogin.offsetHeight;
+				var dWidth = oLogin.offsetWidth;
+
+				//设置登录窗的top和left
+					oLogin.style.left = (sWidth-dWidth)/2+"px";
+					oLogin.style.top = (cHeight-dHeight)/2+"px";
+				var oClose =document.getElementById('loginCanel');
+					oMask.onclick= oClose.onclick = function(){
+						document.body.removeChild(oMask);
+						document.body.removeChild(oLogin);
+					};
+			}
+		})();
+	</script>
+</body>
+</html>

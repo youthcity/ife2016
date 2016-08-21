@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>环形动画</title>
+	<style type="text/css">
+		body {
+			font-family: "Microsoft YaHei";
+			/*background-color: ;*/
+		}
+		.demo,.mask,.img,.border {
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+		}
+		.demo {
+			position: relative;
+			display: block;
+			margin: 50px auto;
+		}
+
+		.img {
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+		.mask ,.border {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.mask {
+			text-align: center;
+			color: rgba(0,0,0,0);
+			transition: all .5s ease-in-out;
+
+		}
+		.info{
+			margin-top: 50%;
+			transform: translateY(-50%);
+		}
+		.border {
+			border: 10px solid #8d4bbb;
+			border-left-color: #ffb3a7;
+			border-top-color: #ffb3a7;
+			box-sizing: border-box;
+			transition: all .5s ease-in-out;
+		}
+		.demo:hover .mask {
+			background-color: rgba(0,0,0,.5);
+			color: rgba(255,255,255,1);
+		}
+		.demo:hover .border{
+			transform: rotate(180deg);
+		}
+	</style>
+</head>
+<body>
+	<a href="" class="demo">
+		<div class="img" style="background-image: url(img/flower.jpg)"></div>
+		<div class="mask">
+			<div class="info">
+				<h3>Beautiful Flower</h3>
+				<p>Have A Nice Day</p>
+			</div>
+		</div>
+		<div class="border"></div>
+	</a>
+</body>
+</html>

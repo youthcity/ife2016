@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正圆运动</title>
+	<style type="text/css">
+		body {
+			background-color: #000;
+		}
+		.content {
+			height: 500px;
+			width: 500px;
+			margin: 50px auto;
+			background-color: #f00;
+		}
+		.rocket {
+			width: 100px;
+			height: 100px;
+			background: url(img/ionic.png);
+			background-size: cover;
+			-webkit-transform-origin: 250% center;
+			transform-origin: 250% 250%;
+			-webkit-animation: auto 1s infinite linear;
+			animation: auto 1s infinite linear;
+		}
+
+		@keyframes auto {
+			to {
+				transform: rotate(1turn);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="rocket"></div>
+	</div>
+</body>
+</html>

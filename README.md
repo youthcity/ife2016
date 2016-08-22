@@ -18,6 +18,7 @@
 - [照片悬停效果](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation10.html)
 - [蒙层效果](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/mask1.html)
 - [绿色小圆点闪烁](http://youthcity.github.io/ife2016/CSS3/imooc_learn_css3/animation1.html)
+- [全屏切换](http://youthcity.github.io/ife2016/CSS3/fullPage/index.html)
 
 
 ###我的简历(未完成)
